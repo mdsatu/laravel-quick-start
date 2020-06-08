@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{__('info.name')}} - @yield('title')</title>
+  <title>{{__('info.short_name')}} - @yield('title')</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{asset('front/favicon.png')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
@@ -154,21 +154,6 @@
         <li class="{{(\Request::route()->getName() == 'admin.Admins') ? 'active' : ''}}">
           <a href="">
           <i class="fa fa-users"></i> <span>Users</span>
-          </a>
-        </li>
-        <li class="{{(\Request::route()->getName() == 'admin.categories') ? 'active' : ''}}">
-          <a href="{{route('admin.categories')}}">
-          <i class="fa fa-bars"></i> <span>Categories</span>
-          </a>
-        </li>
-        <li class="{{(\Request::route()->getName() == 'admin.locations') ? 'active' : ''}}">
-          <a href="{{route('admin.locations')}}">
-          <i class="fa fa-map"></i> <span>Locations</span>
-          </a>
-        </li>
-        <li class="{{(\Request::route()->getName() == 'admin.Admins') ? 'active' : ''}}">
-          <a href="">
-          <i class="fa fa-list"></i> <span>Ads</span>
           </a>
         </li>
         <li class="{{(\Request::route()->getName() == 'admin.Admins') ? 'active' : ''}}">

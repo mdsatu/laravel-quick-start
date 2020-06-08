@@ -14,9 +14,9 @@ Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
     Route::get('/admins',                   'Back\AdminController@admins')                  ->name('admin.Admins');
     Route::get('/create-admin',             'Back\AdminController@create')                  ->name('admin.createAdmin');
     Route::post('/create-admin',            'Back\AdminController@store');
-    Route::get('/edit-admin/{id}',          'Back\AdminController@edit')                    ->name('admin.editAdmin');
-    Route::post('/edit-admin/{id}',         'Back\AdminController@update');
-    Route::get('/delete-admin/{id}',        'Back\AdminController@delete')                  ->name('admin.deleteAdmin');
+    Route::get('/edit-admin/{q}',           'Back\AdminController@edit')                    ->name('admin.editAdmin');
+    Route::post('/edit-admin/{q}',          'Back\AdminController@update');
+    Route::get('/delete-admin/{q}',         'Back\AdminController@delete')                  ->name('admin.deleteAdmin');
 });
 // End Backend===================================================================
 

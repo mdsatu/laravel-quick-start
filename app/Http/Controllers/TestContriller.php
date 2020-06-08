@@ -47,7 +47,7 @@ class TestController extends Controller
             $admin = new Admin();    
             $admin->name = 'Demo Admin';
             $admin->email = 'admin@me.com';
-            $admin->mobile = '+8801747323285';
+            $admin->mobile_number = '+8801747323285';
             $admin->password = Hash::make('123456789');
             $admin->save();
 
