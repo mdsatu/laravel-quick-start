@@ -7,6 +7,8 @@ Route::get('/', function () {
 });
 
 
+Route::get('/test',                     'TestController@index')                     ->name('test');
+Route::get('/default-config',           'TestController@defaultConfig')             ->name('defaultConfig');
 
 Auth::routes();
 
