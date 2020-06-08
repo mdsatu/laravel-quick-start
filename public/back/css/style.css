@@ -1,0 +1,15 @@
+  .loader{position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    background: rgb(0,0,0, .5);
+    height: 100vh;
+    z-index: 999999;
+    color: #fff;
+    padding-top: 45vh;}
+
+.swal2-title {
+font-size: 22px !important;
+}
