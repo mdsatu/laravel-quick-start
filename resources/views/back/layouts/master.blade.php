@@ -106,7 +106,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{asset('img/user-img.png')}}" style="width:20px;">
-              <span class="hidden-xs">{{auth()->user()->name}}</span>
+              <span class="hidden-xs">{{auth('admin')->user()->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -114,8 +114,8 @@
                 <img src="{{asset('img/user-img.png')}}">
 
                 <p>
-                  {{auth()->user()->name}}
-                  <small>{{auth()->user()->name}}</small>
+                  {{auth('admin')->user()->name}}
+                  <small>{{auth('admin')->user()->name}}</small>
                 </p>
               </li>
               <!-- Menu Footer-->
