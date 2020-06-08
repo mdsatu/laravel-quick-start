@@ -26,3 +26,31 @@
 
 
 /* End Sweet Alert */
+
+
+/* Image Style */
+
+img.whp {
+    width: 100%;
+    height: auto
+}
+
+img.small {
+    max-width: 120px;
+    max-height: 80px;
+}
+
+
+/* End Image Style */
+
+
+/* Others Style */
+
+ul.npnls {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* End Others Style */

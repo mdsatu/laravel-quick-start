@@ -12,7 +12,7 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Edit admin</h3>
-        <a href="{{route('admin.Admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <a href="{{route('admin.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
@@ -54,6 +54,8 @@
 
         <div class="box-footer">
         <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <small><b>NB: *</b> marked are required field.</small>
         </div>
     </form>
 </div>

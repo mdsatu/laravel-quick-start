@@ -151,14 +151,19 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="{{(\Request::route()->getName() == 'admin.Admins') ? 'active' : ''}}">
+        <li class="{{(\Request::route()->getName() == 'admin.admins') ? 'active' : ''}}">
           <a href="">
           <i class="fa fa-users"></i> <span>Users</span>
           </a>
         </li>
-        <li class="{{(\Request::route()->getName() == 'admin.Admins') ? 'active' : ''}}">
-          <a href="{{route('admin.Admins')}}">
-          <i class="fa fa-user"></i> <span>Admins</span>
+        <li class="{{(\Request::route()->getName() == 'admin.admins') ? 'active' : ''}}">
+          <a href="{{route('admin.admins')}}">
+          <i class="fa fa-user-secret"></i> <span>Admins</span>
+          </a>
+        </li>
+        <li class="{{(\Request::route()->getName() == 'admin.profile') ? 'active' : ''}}">
+          <a href="{{route('admin.profile')}}">
+          <i class="fa fa-user"></i> <span>Profile</span>
           </a>
         </li>
         <li>

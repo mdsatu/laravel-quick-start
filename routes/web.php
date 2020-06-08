@@ -12,12 +12,16 @@ Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
     Route::get('/',                         'Back\DashboardController@dashboard')           ->name('admin.dashboard');
 
     // Admin CRUD
-    Route::get('/admins',                   'Back\AdminController@admins')                  ->name('admin.Admins');
+    Route::get('/admins',                   'Back\AdminController@admins')                  ->name('admin.admins');
     Route::get('/create-admin',             'Back\AdminController@create')                  ->name('admin.createAdmin');
     Route::post('/create-admin',            'Back\AdminController@store');
     Route::get('/edit-admin/{q}',           'Back\AdminController@edit')                    ->name('admin.editAdmin');
     Route::post('/edit-admin/{q}',          'Back\AdminController@update');
     Route::get('/delete-admin/{q}',         'Back\AdminController@delete')                  ->name('admin.deleteAdmin');
+    
+    // Admin Profile
+    Route::get('/profile',                  'Back\ProfileController@profile')               ->name('admin.profile');
+    Route::post('/profile',                 'Back\ProfileController@profileSubmit');
 });
 // End Backend===================================================================
 

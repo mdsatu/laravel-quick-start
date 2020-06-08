@@ -12,7 +12,7 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Create new admin</h3>
-        <a href="{{route('admin.Admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <a href="{{route('admin.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->

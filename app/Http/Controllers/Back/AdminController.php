@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function admins(){
         $q = Admin::with('Role')->latest()->get();
 
-        return view('back.admin.list')->with([
+        return view('back.admin.admins')->with([
             'q' => $q
         ]);
     }
