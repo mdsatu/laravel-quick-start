@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{__('info.short_name')}} - @yield('title')</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{asset('front/favicon.png')}}" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -146,8 +146,8 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="{{(\Request::route()->getName() == 'admin.Dashboard') ? 'active' : ''}}">
-          <a href="{{route('admin.Dashboard')}}">
+        <li class="{{(\Request::route()->getName() == 'admin.dashboard') ? 'active' : ''}}">
+          <a href="{{route('admin.dashboard')}}">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -180,7 +180,7 @@
         <!-- <small>Version 2.0</small> -->
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{route('admin.Dashboard')}}"><i class="fa fa-dashboard"></i> {{__('info.short_name')}}</a></li>
+        <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('info.short_name')}}</a></li>
         <li class="active">@yield('title')</li>
       </ol>
     </section>
