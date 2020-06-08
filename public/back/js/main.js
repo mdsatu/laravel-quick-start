@@ -1,8 +1,8 @@
 // Loader Function
-function loader(type = 'show'){
-    if (type == 'show'){
+function loader(type = 'show') {
+    if (type == 'show') {
         $('.loader').show();
-    }else{
+    } else {
         $('.loader').hide();
     }
 }
@@ -15,14 +15,15 @@ const Toast = Swal.mixin({
     background: '#E5F3FE',
     timer: 3000
 });
-function alert(status = 'e', message = 'Something wrong!'){
+
+function alert(status = 'e', message = 'Something wrong!') {
     let icon;
-    if (status == 's'){
+    if (status == 's') {
         icon = 'success';
-    } else if (status == 'us'){
+    } else if (status == 'us') {
         icon = 'success';
         message = 'Updated Successfully!';
-    }else{
+    } else {
         icon = 'error';
     }
     Toast.fire({
@@ -32,6 +33,6 @@ function alert(status = 'e', message = 'Something wrong!'){
 }
 
 // Delete Confirm Alert
-$(document).on('click', '.dc', function(){
+$(document).on('click', '.dc', function() {
     return confirm('Are you sure to remove?');
 });
