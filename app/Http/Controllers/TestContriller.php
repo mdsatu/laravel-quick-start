@@ -75,7 +75,7 @@ class TestController extends Controller
 
         $setting['group'] = 'general';
         $setting['name'] = 'slogan';
-        $setting['value'] =  'Welcome to ' . env("PROJECT_NAME", "Name");
+        $setting['value'] =  env("PROJECT_SLOGAN", "Laravel Quick Start");
         Setting::updateOrInsert($setting);
 
         $setting['group'] = 'general';
@@ -100,7 +100,7 @@ class TestController extends Controller
 
         $setting['group'] = 'general';
         $setting['name'] = 'copyright';
-        $setting['value'] =  'Copyright @ ' . date('Y');
+        $setting['value'] =  env("PROJECT_COPYRIGHT", "LaravelQS @ 2020");
         Setting::updateOrInsert($setting);
 
         dd('Success');
