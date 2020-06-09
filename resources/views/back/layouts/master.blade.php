@@ -104,6 +104,7 @@
         </div>
         <div class="pull-left info">
           <p>{{auth('admin')->user()->name}}</p>
+          <span>{{auth('admin')->user()->title}}</span>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->

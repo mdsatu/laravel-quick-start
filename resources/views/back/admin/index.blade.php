@@ -19,6 +19,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Title</th>
             <th>Email</th>
             <th>Mobile Number</th>
             <th>Roles</th>
@@ -30,6 +31,7 @@
         <tr>
         <td>{{$data->id}}</td>
         <td>{{$data->name}}</td>
+        <td>{{$data->title}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
         <td>
@@ -49,6 +51,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Title</th>
             <th>Email</th>
             <th>Mobile Number</th>
             <th>Roles</th>

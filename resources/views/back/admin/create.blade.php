@@ -24,6 +24,10 @@
             <input name="name" type="text" class="form-control" id="Name" placeholder="Name" value="{{old('name')}}" required>
         </div>
         <div class="form-group">
+            <label>Title*</label>
+            <input name="title" type="text" class="form-control" placeholder="Title" value="{{old('title')}}" required>
+        </div>
+        <div class="form-group">
             <label for="mobile">Mobile Number*</label>
             <input name="mobile_number" type="number" class="form-control" id="mobile" placeholder="Mobile Number" value="{{old('mobile_number')}}" required>
         </div>

@@ -40,6 +40,7 @@ class AdminController extends Controller
     public function store(Request $request){
         $request->validate([
             'name' => 'required|max:255',
+            'title' => 'required|max:255',
             'mobile_number' => 'required|unique:admins',
             'email' => 'required|unique:admins',
             'role' => 'required',
@@ -76,6 +77,7 @@ class AdminController extends Controller
         if($request->type == 'info'){
             $request->validate([
                 'name' => 'required|max:191',
+                'title' => 'required|max:191',
                 'mobile_number' => 'required|unique:admins,mobile_number,' . $q->id,
                 'email' => 'required|unique:admins,email,' . $q->id,
                 'role' => 'required',
