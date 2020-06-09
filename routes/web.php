@@ -37,14 +37,14 @@ Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
 });
 // End Backend===================================================================
 
+
+// Frontend=======================================================================
+//General Pages
+Route::get('/',                             'Front\PageController@homepage')               ->name('homepage');
+// End Frontend===================================================================
+
 // Auth
 Route::post('logout',                       'Auth\LoginController@logout')                  ->name('logout');
 
 Route::get('/test',                     'TestController@index')                     ->name('test');
 Route::get('/default-config',           'TestController@defaultConfig')             ->name('defaultConfig');
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('homepage');
-
-Route::get('/home', 'HomeController@index')->name('home');
