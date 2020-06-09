@@ -104,7 +104,7 @@ class AdminController extends Controller
     }
 
     // Delete
-    public function delete(Admin $q){
+    public function destroy(Admin $q){
         if($q->id == auth('admin')->user()->id){
             return redirect()->back()->with('error', 'Sorry! You can not delete your own account!');
         }

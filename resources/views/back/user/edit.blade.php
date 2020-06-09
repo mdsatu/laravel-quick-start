@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title', 'Edit Admin')
+@section('title', 'Edit User')
 
 @section('head')
     <!-- Select 2 -->
@@ -11,43 +11,48 @@
 @section('master')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">Edit admin</h3>
-        <a href="{{route('admin.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <h3 class="box-title">Edit User</h3>
+        <a href="{{route('admin.users')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Users List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.editAdmin', $data->id)}}">
+    <form role="form" method="post" action="{{route('admin.editUser', $data->id)}}">
         @csrf
         <input type="hidden" name="type" value="info">
 
         <div class="box-body">
-        <div class="form-group">
-            <label for="Name">Name*</label>
-            <input name="name" type="text" class="form-control" id="Name" placeholder="Name" value="{{old('name') ?? $data->name}}" required>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input name="first_name" type="text" class="form-control" placeholder="First Name" value="{{old('first_name') ?? $data->first_name}}" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input name="last_name" type="text" class="form-control" placeholder="Last Name" value="{{old('last_name') ?? $data->last_name}}" required>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="mobile">Mobile Number*</label>
-            <input name="mobile_number" type="number" class="form-control" id="mobile" placeholder="Mobile Number" value="{{old('mobile_number') ?? $data->mobile_number}}" required>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="mobile">Mobile Number*</label>
+                    <input name="mobile_number" type="number" class="form-control" id="mobile" placeholder="Mobile Number" value="{{old('mobile_number') ?? $data->mobile_number}}" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address*</label>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email') ?? $data->email}}" required>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address*</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email') ?? $data->email}}" required>
-        </div>
-        <div class="form-group">
-            <label>Select Role*</label>
-            <select name="role[]" class="form-control selectpicker" multiple required>
-                @foreach($roles as $role)
-                <option value="{{$role->id}}" {{(in_array($role->id, $data->Role->pluck('id')->toArray())) ? 'selected' : ''}}>{{$role->title}}</option>
-                @endforeach
-            </select>
-        </div>
+
         <div class="form-group">
             <label>Address</label>
             <input name="address" type="text" class="form-control" placeholder="Address" value="{{old('address') ?? $data->address}}">
-        </div>
-        <div class="form-group">
-            <label>Small Information</label>
-            <textarea name="bio" id="" cols="30" rows="5" class="form-control" placeholder="Small Information">{{old('bio') ?? $data->bio}}</textarea>
         </div>
         </div>
         <!-- /.box-body -->
@@ -66,7 +71,7 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.editAdmin', $data->id)}}">
+    <form role="form" method="post" action="{{route('admin.editUser', $data->id)}}">
         @csrf
         <input type="hidden" name="type" value="password">
 

@@ -109,8 +109,8 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="{{(\Request::route()->getName() == 'admin.admins') ? 'active' : ''}}">
-          <a href="">
+        <li class="{{(\Request::route()->getName() == 'admin.users') ? 'active' : ''}}">
+          <a href="{{route('admin.users')}}">
           <i class="fa fa-users"></i> <span>Users</span>
           </a>
         </li>

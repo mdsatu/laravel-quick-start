@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title', 'Admins List')
+@section('title', 'Users List')
 
 @section('head')
   <!-- DataTables -->
@@ -9,8 +9,8 @@
 @section('master')
 <div class="box box-primary">
     <div class="box-header">
-        <h3 class="box-title">All Admins</h3>
-        <a href="{{route('admin.createAdmin')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Admin</a>
+        <h3 class="box-title">All Users</h3>
+        <a href="{{route('admin.createUser')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Users</a>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -21,7 +21,6 @@
             <th>Name</th>
             <th>Email</th>
             <th>Mobile Number</th>
-            <th>Roles</th>
             <th>Action</th>
         </tr>
         </thead>
@@ -29,18 +28,13 @@
         @foreach($q as $data)
         <tr>
         <td>{{$data->id}}</td>
-        <td>{{$data->name}}</td>
+        <td>{{$data->last_name . ' ' . $data->last_name}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
         <td>
-        @foreach($data->Role as $role)
-        {{$role->title}},
-        @endforeach
-        </td>
-        <td>
-            <a href="{{route('admin.editAdmin', $data->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+            <a href="{{route('admin.editUser', $data->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
             ||
-            <a href="{{route('admin.destroyAdmin', $data->id)}}" class="btn btn-danger btn-sm dc"><i class="fa fa-trash"></i> Delete</a>
+            <a href="{{route('admin.destroyUser', $data->id)}}" class="btn btn-danger btn-sm dc"><i class="fa fa-trash"></i> Delete</a>
         </td>
         </tr>
         @endforeach
@@ -51,7 +45,6 @@
             <th>Name</th>
             <th>Email</th>
             <th>Mobile Number</th>
-            <th>Roles</th>
             <th>Action</th>
         </tr>
         </tfoot>
