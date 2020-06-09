@@ -15,13 +15,13 @@
 
         <ul class="list-group list-group-unbordered">
         <li class="list-group-item">
+            <b>Products</b> <a class="pull-right">0</a>
+        </li>
+        <li class="list-group-item">
+            <b>Articles</b> <a class="pull-right">0</a>
+        </li>
+        <li class="list-group-item">
             <b>Followers</b> <a class="pull-right">0</a>
-        </li>
-        <li class="list-group-item">
-            <b>Following</b> <a class="pull-right">0</a>
-        </li>
-        <li class="list-group-item">
-            <b>Friends</b> <a class="pull-right">0</a>
         </li>
         </ul>
     </div>
@@ -34,7 +34,7 @@
     <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#Information" data-toggle="tab">Information</a></li>
-        <li><a href="#password" data-toggle="tab">Password</a></li>
+        <li><a href="#password" data-toggle="tab">Change Password</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="Information">
@@ -78,18 +78,16 @@
             </div>
             </div>
             <div class="form-group">
-            <label class="col-sm-2 control-label">Profile Picture</label>
+            <label class="col-sm-2 control-label">Change Picture</label>
 
             <div class="col-sm-10">
-                <label for="image">Change profile picture</label>
                 <input type="file" id="image" name="image" accept="image/*">
                 <small><b>NB:</b> Best size for image are 120px height and 120px width.</small>
             </div>
             </div>
             <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-info">Update</button>
-                <br>
+                <button type="submit" class="btn btn-info btn-block">Update</button>
                 <small><b>NB: *</b> marked are required field.</small>
             </div>
             </div>
@@ -118,9 +116,8 @@
             </div>
             <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-info">Change Password</button>
-            <br>
-            <small><b>NB: *</b> marked are required field.</small>
+                <button type="submit" class="btn btn-info btn-block">Change Password</button>
+                <small><b>NB: *</b> marked are required field.</small>
             </div>
             </div>
         </form>

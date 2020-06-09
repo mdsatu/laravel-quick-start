@@ -45,7 +45,8 @@ class TestController extends Controller
         $checkAdmin = Admin::where('email', 'admin@me.com')->first();
         if(!$checkAdmin){
             $admin = new Admin();    
-            $admin->name = 'Demo Admin';
+            $admin->name = 'Admin';
+            $admin->title = 'Super Admin';
             $admin->email = 'admin@me.com';
             $admin->mobile_number = '+8801747323285';
             $admin->password = Hash::make('123456789');
