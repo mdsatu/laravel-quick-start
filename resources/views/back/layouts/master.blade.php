@@ -13,7 +13,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('back/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('back/css/ionicons.min.css')}}">
+  <link rel="stylesheet" href="{{asset('back/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('back/dist/css/AdminLTE.min.css')}}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -78,6 +78,10 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
+                <div class="pull-left">
+                  <a href="{{route('admin.profile')}}" class="btn btn-default btn-flat">Profile</a>
+                </div>
+
                 <div class="pull-right">
                   <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -199,15 +203,13 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('back/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
+<script src="{{asset('back/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<!-- FastClick -->
 <script src="{{asset('back/js/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('back/dist/js/adminlte.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{asset('back/js/jquery.sparkline.min.js')}}"></script>
-<!-- SlimScroll -->
-<script src="{{asset('back/js/jquery.slimscroll.min.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('back/dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('back/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('back/dist/js/demo.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
