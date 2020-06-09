@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
     // Admin list
-    public function admins(){
+    public function index(){
         $q = Admin::with('Role')->latest()->get();
 
         return view('back.admin.admins')->with([

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{__('info.short_name')}} - @yield('title')</title>
+  <title>{{__('info.short_title')}} - @yield('title')</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{__('info.logo')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
@@ -46,9 +46,9 @@
     <!-- Logo -->
     <a href="{{route('homepage')}}" target="_blank" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">{{__('info.short_name')}}</span>
+      <span class="logo-mini">{{__('info.short_title')}}</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">{{__('info.short_name')}}</span>
+      <span class="logo-lg">{{__('info.title')}}</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -148,7 +148,7 @@
         <!-- <small>Version 2.0</small> -->
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('info.short_name')}}</a></li>
+        <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('info.short_title')}}</a></li>
         <li class="active">@yield('title')</li>
       </ol>
     </section>

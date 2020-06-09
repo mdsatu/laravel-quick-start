@@ -8,30 +8,68 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.settings')}}">
+    <form role="form" method="post" action="{{route('admin.settings')}}" enctype="multipart/form-data">
     @csrf
         <div class="box-body">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Title" value="{{Info::Web('general', 'title')}}" required>
+                        <input type="text" class="form-control" name="title" placeholder="Title" value="{{old('title') ?? __('info.title')}}" required>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Short Title</label>
-                        <input type="text" class="form-control" name="short_title" placeholder="Short Title" required>
+                        <input type="text" class="form-control" name="short_title" placeholder="Short Title" value="{{old('short_title') ?? __('info.short_title')}}" required>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="sidebar_ad">Sidebar AD</label>
-                <textarea class="form-control" name="sidebar" cols="30" rows="4" placeholder="Sidebar AD"></textarea>
+                <label>Slogan</label>
+                <input type="text" class="form-control" name="slogan" placeholder="Slogan" value="{{old('slogan') ?? __('info.slogan')}}" required>
             </div>
             <div class="form-group">
-                <label for="footer_ad">Footer AD</label>
-                <textarea class="form-control" name="footer" cols="30" rows="4" placeholder="Footer AD"></textarea>
+                <label>Web URL</label>
+                <input type="text" class="form-control" name="web_url" placeholder="Web URL" value="{{old('web_url') ?? __('info.web_url')}}" required>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" name="email" placeholder="Email Address" value="{{old('email') ?? __('info.email')}}" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="text" class="form-control" name="mobile" placeholder="Mobile Number" value="{{old('mobile') ?? __('info.mobile')}}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" name="address" placeholder="Address" value="{{old('address') ?? __('info.address')}}" required>
+            </div>
+            <div class="form-group">
+                <label>Copyright</label>
+                <input type="text" class="form-control" name="copyright" placeholder="Copyright" value="{{old('copyright') ?? __('info.copyright')}}" required>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{__('info.logo')}}" class="small">
+                    <div class="form-group">
+                        <label>Logo</label>
+                        <input type="file" name="logo" accept="image/*">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{{__('info.favicon')}}" class="small">
+                    <div class="form-group">
+                        <label>Favicon</label>
+                        <input type="file" name="favicon" accept="image/*">
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.box-body -->

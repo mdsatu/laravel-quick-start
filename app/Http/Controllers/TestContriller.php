@@ -79,7 +79,7 @@ class TestController extends Controller
         Setting::updateOrInsert($setting);
 
         $setting['group'] = 'general';
-        $setting['name'] = 'web_address';
+        $setting['name'] = 'web_url';
         $setting['value'] =  env("PROJECT_DOMAIN", "me.com");
         Setting::updateOrInsert($setting);
 

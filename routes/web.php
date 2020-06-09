@@ -25,6 +25,7 @@ Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
     
     // Settings
     Route::get('/settings',                 'Back\SettingsController@settings')             ->name('admin.settings');
+    Route::post('/settings',                'Back\SettingsController@settingsSubmit');
 });
 // End Backend===================================================================
 
