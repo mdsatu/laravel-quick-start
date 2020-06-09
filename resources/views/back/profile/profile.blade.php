@@ -2,85 +2,135 @@
 @section('title', 'My Profile')
 
 @section('master')
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">Profile Information</h3>
+<div class="row">
+<div class="col-md-3">
+
+    <!-- Profile Image -->
+    <div class="box box-primary">
+    <div class="box-body box-profile">
+        <img class="profile-user-img img-responsive img-circle" src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" alt="{{auth('admin')->user()->name}}">
+
+        <h3 class="profile-username text-center">{{auth('admin')->user()->name}}</h3>
+
+        <ul class="list-group list-group-unbordered">
+        <li class="list-group-item">
+            <b>Followers</b> <a class="pull-right">0</a>
+        </li>
+        <li class="list-group-item">
+            <b>Following</b> <a class="pull-right">0</a>
+        </li>
+        <li class="list-group-item">
+            <b>Friends</b> <a class="pull-right">0</a>
+        </li>
+        </ul>
     </div>
-    <!-- /.box-header -->
-    <div class="box-body">
-        <form action="{{route('admin.profile')}}" method="post" enctype="multipart/form-data">
+    <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+<!-- /.col -->
+<div class="col-md-9">
+    <div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#Information" data-toggle="tab">Information</a></li>
+        <li><a href="#password" data-toggle="tab">Password</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="Information">
+        <form class="form-horizontal" action="{{route('admin.profile')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="action" value="information">
-            <div class="form-group">
-                <label for="name">Name*</label>
-                <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="{{old('name') ?? auth('admin')->user()->name}}" required>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="email">Email*</label>
-                        <input name="email" type="text" class="form-control" id="email" placeholder="Email" value="{{old('email') ?? auth('admin')->user()->email}}" required>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="mobile_number">Mobile Number*</label>
-                        <input name="mobile_number" type="text" class="form-control" id="mobile_number" placeholder="Mobile Number" value="{{old('mobile_number') ?? auth('admin')->user()->mobile_number}}" required>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Address</label>
-                <input name="address" type="text" class="form-control" placeholder="Address" value="{{old('address') ?? auth('admin')->user()->address}}">
-            </div>
 
             <div class="form-group">
-                <label>Short Information</label>
-                <textarea name="bio" class="form-control" cols="30" rows="4">{{old('bio') ?? auth('admin')->user()->bio}}</textarea>
+            <label for="inputName" class="col-sm-2 control-label">Name*</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" value="{{old('name') ?? auth('admin')->user()->name}}" required>
             </div>
-            @if(auth('admin')->user()->image)
-            <img src="{{asset('uploads/admin/' . auth('admin')->user()->image)}}" class="small">
-            @endif
+            </div>
             <div class="form-group">
-                <label for="image">Profile Picture</label>
+            <label for="inputEmail" class="col-sm-2 control-label">Email*</label>
+
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{{old('email') ?? auth('admin')->user()->email}}" required>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">Mobile Number*</label>
+
+            <div class="col-sm-10">
+                <input type="number" class="form-control" placeholder="Mobile Number" name="mobile_number" value="{{old('mobile_number') ?? auth('admin')->user()->mobile_number}}" required>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">Address</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Address" name="address" value="{{old('address') ?? auth('admin')->user()->address}}">
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">About You</label>
+
+            <div class="col-sm-10">
+                <textarea class="form-control" placeholder="About You" name="bio">{{old('bio') ?? auth('admin')->user()->bio}}</textarea>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">Profile Picture</label>
+
+            <div class="col-sm-10">
+                <label for="image">Change profile picture</label>
                 <input type="file" id="image" name="image" accept="image/*">
                 <small><b>NB:</b> Best size for image are 120px height and 120px width.</small>
             </div>
-
-            <button type="submit" class="btn btn-info">Update</button>
-            <br>
-            <small><b>NB: *</b> marked are required field.</small>
+            </div>
+            <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-info">Update</button>
+                <br>
+                <small><b>NB: *</b> marked are required field.</small>
+            </div>
+            </div>
         </form>
-    </div>
-</div>
+        </div>
+        <!-- /.tab-pane -->
 
-<div class="box box-primary">
-    <div class="box-header with-border">
-        <h3 class="box-title">Change Password</h3>
-    </div>
-    <!-- /.box-header -->
-    <div class="box-body">
-        <form action="{{route('admin.profile')}}" method="post">
+        <div class="tab-pane" id="password">
+        <form class="form-horizontal" action="{{route('admin.profile')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="action" value="password">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="password">New Password*</label>
-                        <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="password_confirmation">Confirm Password*</label>
-                        <input name="password_confirmation" type="password" class="form-control" id="password_confirmation" placeholder="Confirm Password" required>
-                    </div>
-                </div>
-            </div>
 
-            <button type="submit" class="btn btn-info">Change Password</button>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">New Password*</label>
+
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="New Password" name="password" required>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">Confirm Password*</label>
+
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required>
+            </div>
+            </div>
+            <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-info">Change Password</button>
+            <br>
+            <small><b>NB: *</b> marked are required field.</small>
+            </div>
+            </div>
         </form>
+        </div>
+        <!-- /.tab-pane -->
     </div>
+    <!-- /.tab-content -->
+    </div>
+    <!-- /.nav-tabs-custom -->
 </div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
 @endsection
