@@ -33,7 +33,7 @@
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
         <td>
-        @foreach($data->Role as $role)
+        @foreach($data->Roles as $role)
         {{$role->title}},
         @endforeach
         </td>

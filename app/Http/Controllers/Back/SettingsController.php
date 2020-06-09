@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\DB;
 class SettingsController extends Controller
 {
     // Website Settings
-    public function settings(){
-        return view('back.settings.settings');
+    public function info(){
+        return view('back.settings.info');
     }
 
     // Update Settings
-    public function settingsSubmit(Request $request){
+    public function infoSubmit(Request $request){
         $request->validate([
             'title' => 'required|max:255',
             'short_title' => 'required|max:255',

@@ -30,15 +30,15 @@ class TestController extends Controller
         $roles['slug'] = Str::of($str)->kebab();
         Role::updateOrInsert($roles);
 
-        $str = 'Order Employee';
-        $roles['title'] = $str;
-        $roles['slug'] = Str::of($str)->kebab();
-        Role::updateOrInsert($roles);
+        // $str = 'Order Employee';
+        // $roles['title'] = $str;
+        // $roles['slug'] = Str::of($str)->kebab();
+        // Role::updateOrInsert($roles);
 
-        $str = 'Product Employee';
-        $roles['title'] = $str;
-        $roles['slug'] = Str::of($str)->kebab();
-        Role::updateOrInsert($roles);
+        // $str = 'Product Employee';
+        // $roles['title'] = $str;
+        // $roles['slug'] = Str::of($str)->kebab();
+        // Role::updateOrInsert($roles);
 
 
         // Create Admin

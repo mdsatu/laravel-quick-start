@@ -9,14 +9,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Middleware\SuperAdminAccess;
 
 class AdminController extends Controller
 {
-    // Admin list
-    public function index(){
-        $q = Admin::with('Role')->latest()->get();
+    public function __construct(){
+        // Check Role
+        $this->middleware(SuperAdminAccess::class);
+    }
 
-        return view('back.admin.admins')->with([
+    // Admin list
+    public function admins(){
+        $q = Admin::with('Roles')->latest()->get();
+
+        return view('back.admin.index')->with([
             'q' => $q
         ]);
     }
@@ -107,6 +113,12 @@ class AdminController extends Controller
     public function destroy(Admin $q){
         if($q->id == auth('admin')->user()->id){
             return redirect()->back()->with('error', 'Sorry! You can not delete your own account!');
+        }
+        $sAdmins = Admin::whereHas('Roles', function($q){
+            $q->where('slug', 'super-admin');
+        })->count();
+        if($sAdmins == 1){
+            return redirect()->back()->with('error', 'Sorry! ' . __('info.title') . ' must have a super admin.');
         }
 
         // Delete Image

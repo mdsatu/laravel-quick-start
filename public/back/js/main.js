@@ -7,6 +7,14 @@ function loader(type = 'show') {
     }
 }
 
+// Delete Confirm Alert
+$(document).on('click', '.dc', function() {
+    return confirm('Are you sure to remove?');
+});
+
+//Active Sidebar Menu
+$('.treeview-menu li.active').closest('.treeview').addClass('active');
+
 // Alert Script
 const Toast = Swal.mixin({
     toast: true,
@@ -31,8 +39,3 @@ function alert(status = 'e', message = 'Something wrong!') {
         title: message
     });
 }
-
-// Delete Confirm Alert
-$(document).on('click', '.dc', function() {
-    return confirm('Are you sure to remove?');
-});

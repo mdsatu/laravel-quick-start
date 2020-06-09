@@ -1,15 +1,16 @@
 @extends('back.layouts.master')
-@section('title', 'Settings')
+@section('title', 'Info Setting')
 
 @section('master')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">Settings</h3>
+        <h3 class="box-title">Info Settings</h3>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.settings')}}" enctype="multipart/form-data">
-    @csrf
+    <form role="form" method="post" action="{{route('admin.info')}}" enctype="multipart/form-data">
+        @csrf
+
         <div class="box-body">
             <div class="row">
                 <div class="col-lg-6">

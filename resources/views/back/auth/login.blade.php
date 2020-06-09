@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Welcome to {{__('info.short_name')}}</title>
+  <title>Welcome to {{__('info.short_title')}}</title>
   <link rel="shortcut icon" href="{{__('info.logo')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -29,7 +29,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{route('homepage')}}">Welcome to {{__('info.short_name')}}</a>
+    <a href="{{route('homepage')}}">Welcome to {{__('info.short_title')}}</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">

@@ -37,7 +37,7 @@
             <label>Select Role*</label>
             <select name="role[]" class="form-control selectpicker" multiple required>
                 @foreach($roles as $role)
-                <option value="{{$role->id}}" {{(in_array($role->id, $data->Role->pluck('id')->toArray())) ? 'selected' : ''}}>{{$role->title}}</option>
+                <option value="{{$role->id}}" {{(in_array($role->id, $data->Roles->pluck('id')->toArray())) ? 'selected' : ''}}>{{$role->title}}</option>
                 @endforeach
             </select>
         </div>

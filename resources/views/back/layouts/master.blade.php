@@ -109,24 +109,37 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+        @can('isSuperAdmin')
         <li class="{{(\Request::route()->getName() == 'admin.users') ? 'active' : ''}}">
           <a href="{{route('admin.users')}}">
           <i class="fa fa-users"></i> <span>Users</span>
           </a>
         </li>
+        <li class="treeview">
+          <a href="{{route('admin.info')}}">
+            <i class="fa fa-gear"></i>
+            <span>Settings</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{{ (\Request::route()->getName() == 'admin.info') ? 'active' : '' }}">
+              <a href="{{route('admin.info')}}"><i class="fa fa-circle-o"></i> General Info</a>
+            </li>
+          </ul>
+        </li>
+        @endcan
+        @can('isSuperAdmin')
         <li class="{{(\Request::route()->getName() == 'admin.admins') ? 'active' : ''}}">
           <a href="{{route('admin.admins')}}">
           <i class="fa fa-user-secret"></i> <span>Admins</span>
           </a>
         </li>
+        @endcan
         <li class="{{(\Request::route()->getName() == 'admin.profile') ? 'active' : ''}}">
           <a href="{{route('admin.profile')}}">
           <i class="fa fa-user"></i> <span>Profile</span>
-          </a>
-        </li>
-        <li class="{{(\Request::route()->getName() == 'admin.settings') ? 'active' : ''}}">
-          <a href="{{route('admin.settings')}}">
-          <i class="fa fa-gear"></i> <span>Settings</span>
           </a>
         </li>
         <li>

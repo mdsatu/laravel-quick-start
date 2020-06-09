@@ -32,8 +32,8 @@ Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
     Route::post('/profile',                 'Back\ProfileController@profileSubmit');
     
     // Settings
-    Route::get('/settings',                 'Back\SettingsController@settings')             ->name('admin.settings');
-    Route::post('/settings',                'Back\SettingsController@settingsSubmit');
+    Route::get('/info',                     'Back\SettingsController@info')                 ->name('admin.info');
+    Route::post('/info',                    'Back\SettingsController@infoSubmit');
 });
 // End Backend===================================================================
 
