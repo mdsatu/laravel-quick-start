@@ -114,7 +114,7 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        @can('isSuperAdmin')
+        @can('isAdmin')
         <li class="{{(\Request::route()->getName() == 'admin.users') ? 'active' : ''}}">
           <a href="{{route('admin.users')}}">
           <i class="fa fa-users"></i> <span>Users</span>
@@ -194,7 +194,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer">
-    <strong>Copyright &copy; {{date('Y')}} | Developed by <a href="https://mdsatu.com">MD Satu</a>
+    <strong>{{__('info.copyright')}} | Developed by <a href="https://mdsatu.com">MD Satu</a>
   </footer>
 </div>
 <!-- ./wrapper -->

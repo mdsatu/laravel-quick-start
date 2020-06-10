@@ -1,11 +1,23 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## About LaravelQS
+
+LaravelQS is a quick start backend functionality. I have done some common functionality that we use in every project regularly. The available features and functionality of this package are:
+
+- Dashboard design with [AdminLTE v2.4.18](adminlte.io/themes/AdminLTE/index2.html).
+- [sweetalert2](https://sweetalert2.github.io/).
+- [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/).
+- [Font Awesome 4.7.0](http://fontawesome.io).
+- Admin authentication.
+- Admin CRUD with role.
+- Admin's profile management.
+- Admin's access role middleware.
+- Admin's access role Gate.
+- User CRUD.
+- Application information settings.
+- Import demo data.
+- Custom jQuery Ajax loader.
+- Some common CSS and JS code.
 
 ## About Laravel
 
@@ -77,3 +89,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## LaravelQS Developed By [MD Satu](https://mdsatu.com).
