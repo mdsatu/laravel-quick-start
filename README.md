@@ -4,7 +4,7 @@
 
 LaravelQS is a quick start backend functionality. I have done some common functionality that we use in every project regularly. The available features and functionality of this package are:
 
-- Dashboard design with [AdminLTE v2.4.18](adminlte.io/themes/AdminLTE/index2.html).
+- Dashboard design with [AdminLTE v2.4.18](http://adminlte.io/themes/AdminLTE/index2.html).
 - [sweetalert2](https://sweetalert2.github.io/).
 - [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/).
 - [Font Awesome 4.7.0](http://fontawesome.io).
@@ -90,4 +90,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## LaravelQS Developed By [MD Satu](https://mdsatu.com).
+LaravelQS @ 2020 || Developed By [MD Satu](https://mdsatu.com).
