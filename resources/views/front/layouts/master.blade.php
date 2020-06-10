@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{__('info.favicon')}}" type="image/x-icon" />
 
-        <title>Laravel</title>
+        <title>LaravelQS</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -45,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 60px;
             }
 
             .links > a {
@@ -81,10 +82,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome to Laravel quickstart pack
+                    Welcome to LaravelQS
                 </div>
 
-                <p>Developed By <a href="http://mdsatu.com">MD Satu</a></p>
+                <p>{{__('info.copyright')}} || Developed By <a href="http://mdsatu.com" style="text-decoration:none;font-weight:700">MD Satu</a></p>
             </div>
         </div>
     </body>
