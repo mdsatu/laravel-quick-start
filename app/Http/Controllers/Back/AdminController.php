@@ -39,7 +39,8 @@ class AdminController extends Controller
     // Store Admin
     public function store(Request $request){
         $request->validate([
-            'name' => 'required|max:255',
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
             'title' => 'required|max:255',
             'mobile_number' => 'required|unique:admins',
             'email' => 'required|unique:admins',
@@ -58,7 +59,7 @@ class AdminController extends Controller
                 $aRole->save();
             }
 
-            return redirect()->route('admin.Admins')->with('success', 'Admin created successfully.');
+            return redirect()->route('admin.admins')->with('success', 'Admin created successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }
@@ -76,7 +77,8 @@ class AdminController extends Controller
     public function update(Request $request, Admin $q){
         if($request->type == 'info'){
             $request->validate([
-                'name' => 'required|max:191',
+                'first_name' => 'required|max:255',
+                'last_name' => 'required|max:255',
                 'title' => 'required|max:191',
                 'mobile_number' => 'required|unique:admins,mobile_number,' . $q->id,
                 'email' => 'required|unique:admins,email,' . $q->id,
@@ -84,7 +86,8 @@ class AdminController extends Controller
                 'address' => 'max:255',
             ]);
 
-            $q->name = $request->name;
+            $q->first_name = $request->first_name;
+            $q->last_name = $request->last_name;
             $q->mobile_number = $request->mobile_number;
             $q->email = $request->email;
             $q->address = $request->address;

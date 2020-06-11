@@ -30,7 +30,7 @@
         @foreach($q as $data)
         <tr>
         <td>{{$data->id}}</td>
-        <td>{{$data->name}}</td>
+        <td>{{$data->Name()}}</td>
         <td>{{$data->title}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>

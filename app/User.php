@@ -19,6 +19,11 @@ class User extends Authenticatable
         'first_name', 'last_name', 'email', 'mobile_number', 'address', 'bio', 'image', 'password',
     ];
 
+    // Generate Name
+    public function Name(){
+        return ($this->first_name ? ($this->first_name . ' ' . $this->last_name) : $this->last_name);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

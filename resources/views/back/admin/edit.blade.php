@@ -21,9 +21,23 @@
         <input type="hidden" name="type" value="info">
 
         <div class="box-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input name="first_name" type="text" class="form-control" placeholder="First Name" value="{{old('first_name') ?? $data->first_name}}" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input name="last_name" type="text" class="form-control" placeholder="Last Name" value="{{old('last_name') ?? $data->last_name}}" required>
+                </div>
+            </div>
+        </div>
         <div class="form-group">
-            <label for="Name">Name*</label>
-            <input name="name" type="text" class="form-control" id="Name" placeholder="Name" value="{{old('name') ?? $data->name}}" required>
+            <label>Title*</label>
+            <input name="title" type="text" class="form-control" placeholder="Title" value="{{old('title') ?? $data->title}}" required>
         </div>
         <div class="form-group">
             <label for="mobile">Mobile Number*</label>

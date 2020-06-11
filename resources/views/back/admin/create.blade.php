@@ -2,10 +2,10 @@
 @section('title', 'Create Admin')
 
 @section('head')
-    <!-- Select 2 -->
+    <!-- Bootstrap-select -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-    <!-- End Select 2 -->
+    <!-- End Bootstrap-select -->
 @endsection
 
 @section('master')
@@ -19,9 +19,20 @@
     <form role="form" method="post" action="{{route('admin.createAdmin')}}">
     @csrf
         <div class="box-body">
-        <div class="form-group">
-            <label for="Name">Name*</label>
-            <input name="name" type="text" class="form-control" id="Name" placeholder="Name" value="{{old('name')}}" required>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input name="first_name" type="text" class="form-control" placeholder="First Name" value="{{old('first_name')}}" required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input name="last_name" type="text" class="form-control" placeholder="Last Name" value="{{old('last_name')}}" required>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label>Title*</label>
@@ -72,11 +83,11 @@
 @endsection
 
 @section('footer')
-<!-- Select 2 -->
+<!-- Bootstrap-select -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
 <script>
- // Select2
+// Bootstrap-select
 $('.selectpicker').selectpicker();
 </script>
 @endsection

@@ -21,12 +21,14 @@ class ProfileController extends Controller
 
         if($request->action == 'information'){
             $request->validate([
-                'name' => 'required|max:255',
+                'first_name' => 'required|max:255',
+                'last_name' => 'required|max:255',
                 'email' => 'required|max:255|unique:admins,email,' . auth('admin')->user()->id,
                 'mobile_number' => 'required|max:255|unique:admins,mobile_number,' . auth('admin')->user()->id
             ]);
 
-            $q->name = $request->name;
+            $q->first_name = $request->first_name;
+            $q->last_name = $request->last_name;
             $q->email = $request->email;
             $q->mobile_number = $request->mobile_number;
             $q->address = $request->address;

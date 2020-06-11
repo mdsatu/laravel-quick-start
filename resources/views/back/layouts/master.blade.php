@@ -64,7 +64,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" style="width:20px;">
-              <span class="hidden-xs">{{auth('admin')->user()->name}}</span>
+              <span class="hidden-xs">{{Auth::user('admin')->Name()}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -72,8 +72,8 @@
                 <img src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}">
 
                 <p>
-                  {{auth('admin')->user()->name}}
-                  <small>{{auth('admin')->user()->name}}</small>
+                  {{Auth::user('admin')->Name()}}
+                  <small>{{Auth::user('admin')->Name()}}</small>
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -103,7 +103,7 @@
           <img src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" class="img-circle" >
         </div>
         <div class="pull-left info">
-          <p>{{auth('admin')->user()->name}}</p>
+          <p>{{Auth::user('admin')->Name()}}</p>
           <span>{{auth('admin')->user()->title}}</span>
         </div>
       </div>

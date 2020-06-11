@@ -8,9 +8,9 @@
     <!-- Profile Image -->
     <div class="box box-primary">
     <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" alt="{{auth('admin')->user()->name}}">
+        <img class="profile-user-img img-responsive img-circle" src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" alt="{{Auth::user('admin')->Name()}}">
 
-        <h3 class="profile-username text-center">{{auth('admin')->user()->name}}</h3>
+        <h3 class="profile-username text-center">{{Auth::user('admin')->Name()}}</h3>
         <p class="text-muted text-center">{{auth('admin')->user()->title}}</p>
 
         <ul class="list-group list-group-unbordered">
@@ -43,10 +43,17 @@
             <input type="hidden" name="action" value="information">
 
             <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">Name*</label>
+            <label for="inputName" class="col-sm-2 control-label">First Name*</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" value="{{old('name') ?? auth('admin')->user()->name}}" required>
+                <input type="text" class="form-control" id="inputName" placeholder="First Name" name="first_name" value="{{old('first_name') ?? auth('admin')->user()->first_name}}" required>
+            </div>
+            </div>
+            <div class="form-group">
+            <label class="col-sm-2 control-label">Last Name*</label>
+
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{old('last_name') ?? auth('admin')->user()->last_name}}" required>
             </div>
             </div>
             <div class="form-group">
