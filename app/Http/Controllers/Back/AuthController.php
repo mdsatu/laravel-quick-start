@@ -28,7 +28,7 @@ class AuthController extends Controller
         // Check Login
         $login = Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
         if (!$login){
-            $login = Auth::guard('admin')->attempt(['mobile' => $request->email, 'password' => $request->password], $request->remember);
+            $login = Auth::guard('admin')->attempt(['mobile_number' => $request->email, 'password' => $request->password], $request->remember);
         }
 
         if($login){

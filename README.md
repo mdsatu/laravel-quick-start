@@ -16,6 +16,7 @@ LaravelQS is a quick start backend functionality. I have done some common functi
 - Admin's access role Gate.
 - User CRUD.
 - Application information settings.
+- Setup helper class fot application information.
 - Import demo data.
 - Custom jQuery Ajax loader.
 - Some common CSS and JS code.
