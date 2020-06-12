@@ -9,7 +9,7 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <table id="example2" class="table table-bordered table-hover">
+        <table id="dataTable" class="table table-bordered table-hover">
         <thead>
         <tr>
             <th>ID</th>
@@ -71,7 +71,7 @@
 <script src="{{asset('back/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 
 <script>
-    $('#example2').DataTable({
+    $('#dataTable').DataTable({
         order: [[0, "desc"]],
     });
 </script>

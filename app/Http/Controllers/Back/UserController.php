@@ -43,7 +43,7 @@ class UserController extends Controller
         $request->validate([
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
-            'email' => 'required|max:255|unique:users',
+            'email' => 'max:255|unique:users',
             'mobile_number' => 'required|max:255|unique:users',
             'address' => 'max:255',
             'password' => 'required|min:8|confirmed'
@@ -82,7 +82,7 @@ class UserController extends Controller
             $request->validate([
                 'first_name' => 'required|max:255',
                 'last_name' => 'required|max:255',
-                'email' => 'required|max:255|unique:users,email,' . $q->id,
+                'email' => 'max:255|unique:users,email,' . $q->id,
                 'mobile_number' => 'required|max:255|unique:users,mobile_number,' . $q->id,
                 'address' => 'max:255'
             ]);

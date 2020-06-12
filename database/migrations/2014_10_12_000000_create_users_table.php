@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->boolean('status')->default(1);
             $table->string('first_name')->nullable();
             $table->string('last_name');
+            $table->string('username')->nullable()->unique();
             $table->string('mobile_number')->unique();
             $table->string('address')->nullable();
             $table->string('image')->nullable();
@@ -25,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->text('bio')->nullable();
+            $table->string('gander', 55)->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

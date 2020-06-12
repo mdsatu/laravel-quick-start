@@ -37,8 +37,8 @@
             <input name="mobile_number" type="number" class="form-control" id="mobile" placeholder="Mobile Number" value="{{old('mobile_number') ?? $data->mobile_number}}" required>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address*</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email') ?? $data->email}}" required>
+            <label for="exampleInputEmail1">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email') ?? $data->email}}">
         </div>
         <div class="form-group">
             <label>Select Role*</label>

@@ -9,11 +9,12 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <table id="example2" class="table table-bordered table-hover">
+        <table id="dataTable" class="table table-bordered table-hover">
         <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Mobile Number</th>
             <th>Action</th>
@@ -23,7 +24,8 @@
         @foreach($q as $data)
         <tr>
         <td>{{$data->id}}</td>
-        <td>{{$data->last_name . ' ' . $data->last_name}}</td>
+        <td>{{$data->Name()}}</td>
+        <td>{{$data->username ?? 'N/A'}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
         <td>
@@ -38,6 +40,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Mobile Number</th>
             <th>Action</th>
@@ -61,7 +64,7 @@
 <script src="{{asset('back/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 
 <script>
-    $('#example2').DataTable({
+    $('#dataTable').DataTable({
         order: [[0, "desc"]],
     });
 </script>
