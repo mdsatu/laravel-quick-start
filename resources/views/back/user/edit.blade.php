@@ -1,13 +1,6 @@
 @extends('back.layouts.master')
 @section('title', 'Edit User')
 
-@section('head')
-    <!-- Select 2 -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-    <!-- End Select 2 -->
-@endsection
-
 @section('master')
 <div class="box box-primary">
     <div class="box-header with-border">
@@ -92,6 +85,11 @@
         </div>
     </form>
 </div>
+@endsection
+
+@section('head')
+<!-- Select 2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 @endsection
 
 @section('footer')

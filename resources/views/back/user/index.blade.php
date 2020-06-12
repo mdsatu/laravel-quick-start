@@ -1,11 +1,6 @@
 @extends('back.layouts.master')
 @section('title', 'Users List')
 
-@section('head')
-  <!-- DataTables -->
-  <link rel="stylesheet" href="{{asset('back/css/dataTables.bootstrap.min.css')}}">
-@endsection
-
 @section('master')
 <div class="box box-primary">
     <div class="box-header">
@@ -55,10 +50,15 @@
 <!-- /.box -->
 @endsection
 
+@section('head')
+<!-- DataTables -->
+<link rel="stylesheet" href="{{asset('back/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+@endsection
+
 @section('footer')
 <!-- DataTables -->
-<script src="{{asset('back/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('back/js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{asset('back/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('back/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 
 <script>
     $('#example2').DataTable({

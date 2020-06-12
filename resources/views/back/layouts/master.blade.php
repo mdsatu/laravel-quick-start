@@ -9,9 +9,9 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{asset('back/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('back/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('back/css/font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{asset('back/bower_components/font-awesome/css/font-awesome.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{asset('back/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
@@ -19,6 +19,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('back/dist/css/skins/_all-skins.min.css')}}">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="{{asset('back/css/style.css')}}">
 
   @yield('head')
@@ -183,6 +184,7 @@
             @include('back.extra.error')
         @endif
 
+        <!-- Custom Loader -->
         <div class="loader" style="display: none">
           <i class="fa fa-spinner fa-spin"></i>
         </div>
@@ -200,20 +202,18 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="{{asset('back/js/jquery.min.js')}}"></script>
+<script src="{{asset('back/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="{{asset('back/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('back/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
 <script src="{{asset('back/bower_components/fastclick/lib/fastclick.js')}}"></script>
-<!-- FastClick -->
-<script src="{{asset('back/js/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('back/dist/js/adminlte.min.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{asset('back/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('back/dist/js/demo.js')}}"></script>
+<!-- sweetalert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
+<!-- Custom JS -->
 <script src="{{asset('back/js/main.js')}}"></script>
 
 @yield('footer')

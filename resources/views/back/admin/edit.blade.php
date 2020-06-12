@@ -1,13 +1,6 @@
 @extends('back.layouts.master')
 @section('title', 'Edit Admin')
 
-@section('head')
-    <!-- Select 2 -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-    <!-- End Select 2 -->
-@endsection
-
 @section('master')
 <div class="box box-primary">
     <div class="box-header with-border">
@@ -103,12 +96,17 @@
 </div>
 @endsection
 
+@section('head')
+<!-- Select 2 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+@endsection
+
 @section('footer')
 <!-- Select 2 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 
 <script>
- // Select2
+// Select2
 $('.selectpicker').selectpicker();
 </script>
 @endsection
