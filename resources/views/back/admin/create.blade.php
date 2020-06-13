@@ -9,7 +9,7 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.createAdmin')}}">
+    <form role="form" method="post" action="{{route('admin.adminCreate')}}">
     @csrf
         <div class="box-body">
         <div class="row">

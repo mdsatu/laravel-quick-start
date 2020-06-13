@@ -8,7 +8,8 @@ LaravelQS is a quick start backend functionality. I have done some common functi
 - [sweetalert2](https://sweetalert2.github.io/).
 - [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/).
 - [Font Awesome 4.7.0](http://fontawesome.io).
-- [Bootstrap-select v1.13.9](https://developer.snapappointments.com/bootstrap-select/).
+- [Bootstrap-select 1.13.9](https://developer.snapappointments.com/bootstrap-select/).
+- PACE Plugin.
 - Admin authentication.
 - Admin CRUD with role.
 - Admin's profile management.

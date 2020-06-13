@@ -9,7 +9,7 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.editAdmin', $data->id)}}">
+    <form role="form" method="post" action="{{route('admin.adminEdit', $data->id)}}">
         @csrf
         <input type="hidden" name="type" value="info">
 
@@ -73,7 +73,7 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.editAdmin', $data->id)}}">
+    <form role="form" method="post" action="{{route('admin.adminEdit', $data->id)}}">
         @csrf
         <input type="hidden" name="type" value="password">
 
