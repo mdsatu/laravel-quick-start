@@ -20,7 +20,7 @@ class CreateAdminsTable extends Migration
             $table->string('title');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('mobile_number')->nullable();
+            $table->string('mobile_number')->unique()->nullable();
             $table->string('address')->nullable();
             $table->string('password');
             $table->boolean('status')->default(1);
