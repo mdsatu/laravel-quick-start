@@ -5,11 +5,11 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Create new admin</h3>
-        <a href="{{route('admin.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <a href="{{route('back.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.adminCreate')}}">
+    <form role="form" method="post" action="{{route('back.adminCreate')}}">
     @csrf
         <div class="box-body">
         <div class="row">

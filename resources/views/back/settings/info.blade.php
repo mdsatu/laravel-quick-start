@@ -8,7 +8,7 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.info')}}" enctype="multipart/form-data">
+    <form role="form" method="post" action="{{route('back.info')}}" enctype="multipart/form-data">
         @csrf
 
         <div class="box-body">

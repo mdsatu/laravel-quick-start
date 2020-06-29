@@ -5,7 +5,7 @@
 <div class="box box-primary">
     <div class="box-header">
         <h3 class="box-title">All Admins</h3>
-        <a href="{{route('admin.adminCreate')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Admin</a>
+        <a href="{{route('back.adminCreate')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Admin</a>
     </div>
     <!-- /.box-header -->
     <div class="box-body table-responsive">
@@ -35,9 +35,9 @@
         @endforeach
         </td>
         <td>
-            <a href="{{route('admin.adminEdit', $data->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+            <a href="{{route('back.adminEdit', $data->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
             ||
-            <a href="{{route('admin.adminDestroy', $data->id)}}" class="btn btn-danger btn-sm dc"><i class="fa fa-trash"></i> Delete</a>
+            <a href="{{route('back.adminDestroy', $data->id)}}" class="btn btn-danger btn-sm dc"><i class="fa fa-trash"></i> Delete</a>
         </td>
         </tr>
         @endforeach

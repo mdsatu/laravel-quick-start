@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function admins(){
         $q = Admin::with('Roles')->latest()->get();
 
-        return view('back.admin.index')->with([
+        return view('back.back.index')->with([
             'q' => $q
         ]);
     }
@@ -31,7 +31,7 @@ class AdminController extends Controller
     public function create(){
         $roles = Role::get();
 
-        return view('back.admin.create')->with([
+        return view('back.back.create')->with([
             'roles' => $roles
         ]);
     }
@@ -59,7 +59,7 @@ class AdminController extends Controller
                 $aRole->save();
             }
 
-            return redirect()->route('admin.admins')->with('success', 'Admin created successfully.');
+            return redirect()->route('back.admins')->with('success', 'Admin created successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }
@@ -67,7 +67,7 @@ class AdminController extends Controller
     // Edit Admin
     public function edit(Admin $q){
         $roles = Role::get();
-        return view('back.admin.edit')->with([
+        return view('back.back.edit')->with([
             'data' => $q,
             'roles' => $roles
         ]);
@@ -123,7 +123,7 @@ class AdminController extends Controller
             $q->where('slug', 'super-admin');
         })->count();
         if($sAdmins == 1){
-            return redirect()->back()->with('error', 'Sorry! ' . __('info.title') . ' must have a super admin.');
+            return redirect()->back()->with('error', 'Sorry! ' . __('info.title') . ' must have a super back.');
         }
 
         // Delete Image

@@ -38,7 +38,7 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="Information">
-        <form class="form-horizontal" action="{{route('admin.profile')}}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{route('back.profile')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="action" value="information">
 
@@ -103,7 +103,7 @@
         <!-- /.tab-pane -->
 
         <div class="tab-pane" id="password">
-        <form class="form-horizontal" action="{{route('admin.profile')}}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{route('back.profile')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="action" value="password">
 

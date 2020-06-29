@@ -5,11 +5,11 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Edit admin</h3>
-        <a href="{{route('admin.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <a href="{{route('back.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.adminEdit', $data->id)}}">
+    <form role="form" method="post" action="{{route('back.adminEdit', $data->id)}}">
         @csrf
         <input type="hidden" name="type" value="info">
 
@@ -73,7 +73,7 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('admin.adminEdit', $data->id)}}">
+    <form role="form" method="post" action="{{route('back.adminEdit', $data->id)}}">
         @csrf
         <input type="hidden" name="type" value="password">
 

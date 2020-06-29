@@ -82,7 +82,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{route('admin.profile')}}" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{route('back.profile')}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
 
                 <div class="pull-right">
@@ -112,19 +112,19 @@
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="{{(\Request::route()->getName() == 'admin.dashboard') ? 'active' : ''}}">
-          <a href="{{route('admin.dashboard')}}">
+        <li class="{{(\Request::route()->getName() == 'back.dashboard') ? 'active' : ''}}">
+          <a href="{{route('back.dashboard')}}">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         @can('isAdmin')
-        <li class="{{(\Request::route()->getName() == 'admin.users') ? 'active' : ''}}">
-          <a href="{{route('admin.users')}}">
+        <li class="{{(\Request::route()->getName() == 'back.users') ? 'active' : ''}}">
+          <a href="{{route('back.users')}}">
           <i class="fa fa-users"></i> <span>Users</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="{{route('admin.info')}}">
+          <a href="{{route('back.info')}}">
             <i class="fa fa-gear"></i>
             <span>Settings</span>
             <span class="pull-right-container">
@@ -132,21 +132,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{ (\Request::route()->getName() == 'admin.info') ? 'active' : '' }}">
-              <a href="{{route('admin.info')}}"><i class="fa fa-circle-o"></i> General Info</a>
+            <li class="{{ (\Request::route()->getName() == 'back.info') ? 'active' : '' }}">
+              <a href="{{route('back.info')}}"><i class="fa fa-circle-o"></i> General Info</a>
             </li>
           </ul>
         </li>
         @endcan
         @can('isSuperAdmin')
-        <li class="{{(\Request::route()->getName() == 'admin.admins') ? 'active' : ''}}">
-          <a href="{{route('admin.admins')}}">
+        <li class="{{(\Request::route()->getName() == 'back.admins') ? 'active' : ''}}">
+          <a href="{{route('back.admins')}}">
           <i class="fa fa-user-secret"></i> <span>Admins</span>
           </a>
         </li>
         @endcan
-        <li class="{{(\Request::route()->getName() == 'admin.profile') ? 'active' : ''}}">
-          <a href="{{route('admin.profile')}}">
+        <li class="{{(\Request::route()->getName() == 'back.profile') ? 'active' : ''}}">
+          <a href="{{route('back.profile')}}">
           <i class="fa fa-user"></i> <span>Profile</span>
           </a>
         </li>
@@ -169,7 +169,7 @@
         <!-- <small>Version 2.0</small> -->
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('info.short_title')}}</a></li>
+        <li><a href="{{route('back.dashboard')}}"><i class="fa fa-dashboard"></i> {{__('info.short_title')}}</a></li>
         <li class="active">@yield('title')</li>
       </ol>
     </section>

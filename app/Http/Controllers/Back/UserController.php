@@ -51,7 +51,7 @@ class UserController extends Controller
         $request['password'] = Hash::make($request->password);
 
         if(User::create($request->all())){
-            return redirect()->route('admin.users')->with('success', 'User created successfully.');
+            return redirect()->route('back.users')->with('success', 'User created successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }

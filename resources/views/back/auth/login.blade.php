@@ -35,7 +35,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="{{route('admin.login')}}" method="post">
+    <form action="{{route('back.login')}}" method="post">
       @csrf
       @if(isset($errors))
           @include('back.extra.error-validation')

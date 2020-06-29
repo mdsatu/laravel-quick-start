@@ -32,7 +32,7 @@ class AuthController extends Controller
         }
 
         if($login){
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('back.dashboard');
         }
         return redirect()->back()->withInput()->with('error', 'Email or password wrong!');
     }
