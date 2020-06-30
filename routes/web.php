@@ -28,7 +28,7 @@ Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
     Route::get('/user-delete/{q}',       'Back\UserController@destroy')                  ->name('back.userDestroy');
     
     // Admin Profile
-    Route::get('/profile',                  'Back\ProfileController@profile')            ->name('back.profile');
+    Route::get('/profile',                  'Back\ProfileController@index')             ->name('back.profile');
     Route::post('/profile',                 'Back\ProfileController@profileSubmit');
     
     // Settings

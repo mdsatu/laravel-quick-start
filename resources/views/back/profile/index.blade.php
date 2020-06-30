@@ -8,9 +8,9 @@
     <!-- Profile Image -->
     <div class="box box-primary">
     <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" alt="{{Auth::user('admin')->Name()}}">
+        <img class="profile-user-img img-responsive img-circle" src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" alt="{{auth('admin')->user()->Name()}}">
 
-        <h3 class="profile-username text-center">{{Auth::user('admin')->Name()}}</h3>
+        <h3 class="profile-username text-center">{{auth('admin')->user()->Name()}}</h3>
         <p class="text-muted text-center">{{auth('admin')->user()->title}}</p>
 
         <ul class="list-group list-group-unbordered">
@@ -103,7 +103,7 @@
         <!-- /.tab-pane -->
 
         <div class="tab-pane" id="password">
-        <form class="form-horizontal" action="{{route('back.profile')}}" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{route('back.profile')}}" method="post">
             @csrf
             <input type="hidden" name="action" value="password">
 

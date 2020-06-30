@@ -6,25 +6,26 @@ use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class ProfileController extends Controller
 {
     // Admin Profile
-    public function profile(){
-        return view('back.profile.profile');
+    public function index(){
+        return view('back.profile.index');
     }
 
     // Update Profile
     public function profileSubmit(Request $request){
-        $q = Admin::find(auth('admin')->user()->id);
+        $q = Auth::user('admin');
 
         if($request->action == 'information'){
             $request->validate([
                 'first_name' => 'required|max:255',
                 'last_name' => 'required|max:255',
-                'email' => 'required|max:255|unique:admins,email,' . auth('admin')->user()->id,
-                'mobile_number' => 'required|max:255|unique:admins,mobile_number,' . auth('admin')->user()->id
+                'email' => 'required|max:255|unique:admins,email,' . $q->id,
+                'mobile_number' => 'required|max:255|unique:admins,mobile_number,' . $q->id
             ]);
 
             $q->first_name = $request->first_name;
@@ -46,7 +47,7 @@ class ProfileController extends Controller
                 $image_resize->resize(120, 120);
                 $image_resize->save(public_path('/uploads/admin/' . $photo));
 
-                // Delete Old
+                // Delete old
                 if($q->image){
                     $img = public_path() . '/uploads/admin/' . $q->image;
                     if (file_exists($img)) {
