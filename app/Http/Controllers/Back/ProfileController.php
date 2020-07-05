@@ -12,8 +12,10 @@ use Intervention\Image\ImageManagerStatic as Image;
 class ProfileController extends Controller
 {
     // Admin Profile
-    public function index(){
-        return view('back.profile.index');
+    public function index(Request $request){
+        return view('back.profile.index')->with([
+            'ref' => $request->ref ?? 'info'
+        ]);
     }
 
     // Update Profile
@@ -56,17 +58,25 @@ class ProfileController extends Controller
                 }
                 $q->image = $photo;
             }
+
+            $route = route('back.profile') . '?ref=info';
         }else{
             $request->validate([
+                'old_password' => 'required',
                 'password' => 'required|min:8|confirmed'
             ]);
 
+            if(!Hash::check($request->old_password, $q->password)){
+                return redirect()->back()->with('error', 'Old password does not  match!');
+            }
+
             $q->password = Hash::make($request->password);
+            $route = route('back.profile') . '?ref=password';
         }
 
         if($q->save()){
-            return redirect()->back()->with('success', 'Profile updated successfully.');
+            return redirect($route)->with('success', 'Profile updated successfully.');
         }
-        return redirect()->back()->with('error', 'Something wrong!');
+        return redirect($route)->with('error', 'Something wrong!');
     }
 }

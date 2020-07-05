@@ -33,11 +33,11 @@
 <div class="col-md-9">
     <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#Information" data-toggle="tab">Information</a></li>
-        <li><a href="#password" data-toggle="tab">Change Password</a></li>
+        <li class="{{($ref == 'info') ? 'active' : ''}}"><a href="#Information" data-toggle="tab">Information</a></li>
+        <li class="{{($ref == 'password') ? 'active' : ''}}"><a href="#password" data-toggle="tab">Change Password</a></li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane active" id="Information">
+        <div class="tab-pane {{($ref == 'info') ? 'active' : ''}}" id="Information">
         <form class="form-horizontal" action="{{route('back.profile')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="action" value="information">
@@ -102,11 +102,18 @@
         </div>
         <!-- /.tab-pane -->
 
-        <div class="tab-pane" id="password">
+        <div class="tab-pane {{($ref == 'password') ? 'active' : ''}}" id="password">
         <form class="form-horizontal" action="{{route('back.profile')}}" method="post">
             @csrf
             <input type="hidden" name="action" value="password">
 
+            <div class="form-group">
+            <label class="col-sm-2 control-label">Old Password*</label>
+
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="Old Password" name="old_password" required>
+            </div>
+            </div>
             <div class="form-group">
             <label class="col-sm-2 control-label">New Password*</label>
 
