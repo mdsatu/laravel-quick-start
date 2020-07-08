@@ -8,10 +8,10 @@
     <!-- Profile Image -->
     <div class="box box-primary">
     <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" alt="{{auth('admin')->user()->Name()}}">
+        <img class="profile-user-img img-responsive img-circle" src="{{auth('back')->user()->image ? asset('uploads/admin/' . auth('back')->user()->image) : asset('img/user-img.png')}}" alt="{{auth('back')->user()->Name()}}">
 
-        <h3 class="profile-username text-center">{{auth('admin')->user()->Name()}}</h3>
-        <p class="text-muted text-center">{{auth('admin')->user()->title}}</p>
+        <h3 class="profile-username text-center">{{auth('back')->user()->Name()}}</h3>
+        <p class="text-muted text-center">{{auth('back')->user()->title}}</p>
 
         <ul class="list-group list-group-unbordered">
         <li class="list-group-item">
@@ -46,42 +46,42 @@
             <label for="inputName" class="col-sm-2 control-label">First Name*</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName" placeholder="First Name" name="first_name" value="{{old('first_name') ?? auth('admin')->user()->first_name}}" required>
+                <input type="text" class="form-control" id="inputName" placeholder="First Name" name="first_name" value="{{old('first_name') ?? auth('back')->user()->first_name}}" required>
             </div>
             </div>
             <div class="form-group">
             <label class="col-sm-2 control-label">Last Name*</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{old('last_name') ?? auth('admin')->user()->last_name}}" required>
+                <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{old('last_name') ?? auth('back')->user()->last_name}}" required>
             </div>
             </div>
             <div class="form-group">
             <label for="inputEmail" class="col-sm-2 control-label">Email*</label>
 
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{{old('email') ?? auth('admin')->user()->email}}" required>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{{old('email') ?? auth('back')->user()->email}}" required>
             </div>
             </div>
             <div class="form-group">
             <label class="col-sm-2 control-label">Mobile Number*</label>
 
             <div class="col-sm-10">
-                <input type="number" class="form-control" placeholder="Mobile Number" name="mobile_number" value="{{old('mobile_number') ?? auth('admin')->user()->mobile_number}}" required>
+                <input type="number" class="form-control" placeholder="Mobile Number" name="mobile_number" value="{{old('mobile_number') ?? auth('back')->user()->mobile_number}}" required>
             </div>
             </div>
             <div class="form-group">
             <label class="col-sm-2 control-label">Address</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" placeholder="Address" name="address" value="{{old('address') ?? auth('admin')->user()->address}}">
+                <input type="text" class="form-control" placeholder="Address" name="address" value="{{old('address') ?? auth('back')->user()->address}}">
             </div>
             </div>
             <div class="form-group">
             <label class="col-sm-2 control-label">About You</label>
 
             <div class="col-sm-10">
-                <textarea class="form-control" placeholder="About You" name="bio">{{old('bio') ?? auth('admin')->user()->bio}}</textarea>
+                <textarea class="form-control" placeholder="About You" name="bio">{{old('bio') ?? auth('back')->user()->bio}}</textarea>
             </div>
             </div>
             <div class="form-group">

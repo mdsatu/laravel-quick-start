@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function admins(){
         $q = Admin::with('Roles')->latest()->get();
 
-        return view('back.back.index')->with([
+        return view('back.admin.index')->with([
             'q' => $q
         ]);
     }
@@ -31,7 +31,7 @@ class AdminController extends Controller
     public function create(){
         $roles = Role::get();
 
-        return view('back.back.create')->with([
+        return view('back.admin.create')->with([
             'roles' => $roles
         ]);
     }
@@ -67,7 +67,7 @@ class AdminController extends Controller
     // Edit Admin
     public function edit(Admin $q){
         $roles = Role::get();
-        return view('back.back.edit')->with([
+        return view('back.admin.edit')->with([
             'data' => $q,
             'roles' => $roles
         ]);
@@ -116,7 +116,7 @@ class AdminController extends Controller
 
     // Delete
     public function destroy(Admin $q){
-        if($q->id == auth('admin')->user()->id){
+        if($q->id == auth('back')->user()->id){
             return redirect()->back()->with('error', 'Sorry! You can not delete your own account!');
         }
         $sAdmins = Admin::whereHas('Roles', function($q){

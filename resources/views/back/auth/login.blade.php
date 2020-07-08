@@ -54,6 +54,8 @@
         <input name="password" type="password" class="form-control" placeholder="Password" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+      <p><a href="">Forgot your password?</a></p>
+
       <div class="row">
         <div class="col-xs-8">
         </div>

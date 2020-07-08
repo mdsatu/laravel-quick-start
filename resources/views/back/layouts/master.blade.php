@@ -66,13 +66,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" style="width:20px;">
+              <img src="{{auth('back')->user()->image ? asset('uploads/admin/' . auth('back')->user()->image) : asset('img/user-img.png')}}" style="width:20px;">
               <span class="hidden-xs">{{Auth::user('admin')->Name()}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}">
+                <img src="{{auth('back')->user()->image ? asset('uploads/admin/' . auth('back')->user()->image) : asset('img/user-img.png')}}">
 
                 <p>
                   {{Auth::user('admin')->Name()}}
@@ -103,11 +103,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel" style="margin-bottom:15px;">
         <div class="pull-left image">
-          <img src="{{auth('admin')->user()->image ? asset('uploads/admin/' . auth('admin')->user()->image) : asset('img/user-img.png')}}" class="img-circle" >
+          <img src="{{auth('back')->user()->image ? asset('uploads/admin/' . auth('back')->user()->image) : asset('img/user-img.png')}}" class="img-circle" >
         </div>
         <div class="pull-left info">
           <p>{{Auth::user('admin')->Name()}}</p>
-          <span>{{auth('admin')->user()->title}}</span>
+          <span>{{auth('back')->user()->title}}</span>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->

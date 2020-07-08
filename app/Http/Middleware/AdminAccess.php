@@ -17,8 +17,8 @@ class AdminAccess
     public function handle($request, Closure $next)
     {
         $roles = array();
-        if (count(Auth::user('admin')->Roles) > 0){
-            $roles = Auth::user('admin')->Roles;
+        if (count(Auth::user('back')->Roles) > 0){
+            $roles = Auth::user('back')->Roles;
         }
         $adminRoles = $roles->pluck('slug')->toArray();
         if (in_array('super-admin', $adminRoles) || in_array('admin', $adminRoles)) {

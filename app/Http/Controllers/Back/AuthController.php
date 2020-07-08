@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest:admin');
+        $this->middleware('guest:back');
     }
 
     // Login Page
@@ -26,9 +26,9 @@ class AuthController extends Controller
         ]);
 
         // Check Login
-        $login = Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
+        $login = Auth::guard('back')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember);
         if (!$login){
-            $login = Auth::guard('admin')->attempt(['mobile_number' => $request->email, 'password' => $request->password], $request->remember);
+            $login = Auth::guard('back')->attempt(['mobile_number' => $request->email, 'password' => $request->password], $request->remember);
         }
 
         if($login){

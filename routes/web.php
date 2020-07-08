@@ -8,7 +8,7 @@ Route::get('/admin-cp/login',            'Back\AuthController@login')           
 Route::post('/admin-cp/login',           'Back\AuthController@loginSubmit');
 
 
-Route::prefix('admin-cp')->middleware('auth:admin')->group(function (){
+Route::prefix('admin-cp')->middleware('auth:back')->group(function (){
     Route::get('/',                      'Back\DashboardController@dashboard')           ->name('back.dashboard');
 
     // Admin CRUD
