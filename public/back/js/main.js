@@ -1,7 +1,7 @@
 // Ajax Loader
 $(document).ajaxStart(function() {
     Pace.restart()
-})
+});
 
 // Loader Function
 function loader(type = 'show') {

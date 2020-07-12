@@ -11,8 +11,8 @@ Route::prefix('admin-cp')->group(function (){
     // Admin Password Reset
     Route::get('/password/email',           'Back\Auth\ForgotPasswordController@showLinkRequestForm')   ->name('back.password.email');
     Route::post('/password/email',          'Back\Auth\ForgotPasswordController@sendResetLinkEmail');
-    Route::post('/password/reset',          'Back\Auth\ResetPasswordController@reset');
     Route::get('/password/reset',           'Back\Auth\ForgotPasswordController@showLinkRequestForm')   ->name('back.password.request');                                     
+    Route::post('/password/reset',          'Back\Auth\ResetPasswordController@reset');
     Route::get('/password/reset/{token}',   'Back\Auth\ResetPasswordController@showResetForm')          ->name('back.password.reset');
 });
 
