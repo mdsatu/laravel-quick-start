@@ -24,6 +24,8 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{asset('back/css/style.css')}}">
 
+  <meta name="author" content="MD Satu" />
+
   @yield('head')
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Welcome to {{__('info.short_title')}}</title>
+
+  <meta name="author" content="MD Satu" />
+
   <link rel="shortcut icon" href="{{__('info.logo')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
