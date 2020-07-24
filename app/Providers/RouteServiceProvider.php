@@ -45,8 +45,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
-
-        //
+        
+        $this->mapBackRoutes();
     }
 
     /**
@@ -61,6 +61,13 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+    protected function mapBackRoutes()
+    {
+        Route::prefix('admin-cp')
+            ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/back.php'));
     }
 
     /**
