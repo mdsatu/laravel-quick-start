@@ -825,11 +825,11 @@
 
 @section('footer')
 <!-- ChartJS -->
-<script src="{{asset('back/bower_components/chart.js/Chart.js')}}"></script>
+<script src="{{asset('back/plugins/Chart.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('back/dist/js/pages/dashboard2.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{asset('back/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('back/plugins/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
 <!-- jvectormap  -->
 <script src="{{asset('back/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
 <script src="{{asset('back/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
