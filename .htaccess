@@ -28,7 +28,7 @@
 </Files>
 
 # Prevent direct access to certain files
-<FilesMatch ^((.*)\.json$|(.*)\.lock$|(.*)\.txt$|(.*)\.xml$|(.*)\.wsdl$|(.*)\.config$|artisan$|.env.example$|.gitattributes$|.gitignore)$>
+<FilesMatch ^((.*)\.json$|(.*)\.lock$|(.*)\.txt$|(.*)\.wsdl$|(.*)\.config$|artisan$|.env.example$|.gitattributes$|.gitignore)$>
  order allow,deny
  deny from all
  satisfy all

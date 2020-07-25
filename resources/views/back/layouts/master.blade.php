@@ -120,8 +120,8 @@
           </a>
         </li>
         @can('isAdmin')
-        <li class="{{(\Request::route()->getName() == 'back.users') ? 'active' : ''}}">
-          <a href="{{route('back.users')}}">
+        <li class="{{(\Request::route()->getName() == 'back.users.index') ? 'active' : ''}}">
+          <a href="{{route('back.users.index')}}">
           <i class="fa fa-users"></i> <span>Users</span>
           </a>
         </li>

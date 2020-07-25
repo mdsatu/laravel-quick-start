@@ -6,5 +6,5 @@ Route::get('/',                         'Front\PageController@homepage')        
 // Auth
 Route::post('logout',                   'Auth\LoginController@logout')               ->name('logout');
 
-Route::get('test',                     'TestController@index')                          ->name('test');
-Route::get('default-config',           'TestController@defaultConfig')                  ->name('defaultConfig');
+// Route::get('test',                     'TestController@index')                          ->name('test');
+// Route::get('default-config',           'TestController@defaultConfig')                  ->name('defaultConfig');

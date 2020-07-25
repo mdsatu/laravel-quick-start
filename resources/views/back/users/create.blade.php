@@ -5,11 +5,11 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Create new user</h3>
-        <a href="{{route('back.users')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Users List</a>
+        <a href="{{route('back.users.index')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Users List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('back.userCreate')}}">
+    <form role="form" method="post" action="{{route('back.users.store')}}">
     @csrf
         <div class="box-body">
         <div class="row">

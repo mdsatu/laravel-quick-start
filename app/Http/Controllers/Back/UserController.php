@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $q = User::latest()->get();
-        return view('back.user.index')->with([
+        return view('back.users.index')->with([
             'q' => $q
         ]);
     }
@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('back.user.create');
+        return view('back.users.create');
     }
 
     /**
@@ -51,7 +51,7 @@ class UserController extends Controller
         $request['password'] = Hash::make($request->password);
 
         if(User::create($request->all())){
-            return redirect()->route('back.users')->with('success', 'User created successfully.');
+            return redirect()->route('back.users.index')->with('success', 'User created successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }
@@ -62,10 +62,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $q)
+    public function edit(User $user)
     {
-        return view('back.user.edit')->with([
-            'data' => $q
+        return view('back.users.edit')->with([
+            'data' => $user
         ]);
     }
 
@@ -76,14 +76,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $q)
+    public function update(Request $request, User $user)
     {
         if($request->type == 'info'){
             $request->validate([
                 'first_name' => 'required|max:255',
                 'last_name' => 'required|max:255',
-                'email' => 'max:255|unique:users,email,' . $q->id,
-                'mobile_number' => 'required|max:255|unique:users,mobile_number,' . $q->id,
+                'email' => 'max:255|unique:users,email,' . $user->id,
+                'mobile_number' => 'required|max:255|unique:users,mobile_number,' . $user->id,
                 'address' => 'max:255'
             ]);
         }else{
@@ -92,7 +92,7 @@ class UserController extends Controller
             ]);
         }
 
-        if($q->update($request->all())){
+        if($user->update($request->all())){
             return redirect()->back()->with('success', 'User updated successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
@@ -104,17 +104,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $q)
+    public function destroy(User $user)
     {
         // Delete Image
-        if($q->image){
-            $img = public_path() . '/uploads/user/' . $q->image;
+        if($user->image){
+            $img = public_path() . '/uploads/user/' . $user->image;
             if (file_exists($img)) {
                 unlink($img);
             }
         }
 
-        if($q->delete()){
+        if($user->delete()){
             return redirect()->back()->with('success', 'User deleted successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');

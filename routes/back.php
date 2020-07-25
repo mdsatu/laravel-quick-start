@@ -23,12 +23,7 @@ Route::middleware('auth:back')->group(function (){
     Route::get('admin-delete/{q}',      'Back\AdminController@destroy')                 ->name('back.adminDestroy');
 
     // User CRUD
-    Route::get('users',                 'Back\UserController@index')                    ->name('back.users');
-    Route::get('user-create',           'Back\UserController@create')                   ->name('back.userCreate');
-    Route::post('user-create',          'Back\UserController@store');
-    Route::get('user-edit/{q}',         'Back\UserController@edit')                     ->name('back.userEdit');
-    Route::post('user-edit/{q}',        'Back\UserController@update');
-    Route::get('user-delete/{q}',       'Back\UserController@destroy')                  ->name('back.userDestroy');
+    Route::resource('users', 'Back\UserController', ['as' => 'back']);
     
     // Admin Profile
     Route::get('profile',               'Back\ProfileController@index')                 ->name('back.profile');

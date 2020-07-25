@@ -5,7 +5,7 @@
 <div class="box box-primary">
     <div class="box-header">
         <h3 class="box-title">All Users</h3>
-        <a href="{{route('back.userCreate')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Users</a>
+        <a href="{{route('back.users.create')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Users</a>
     </div>
     <!-- /.box-header -->
     <div class="box-body table-responsive">
@@ -29,9 +29,13 @@
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
         <td>
-            <a href="{{route('back.userEdit', $data->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
+            <a href="{{route('back.users.edit', $data->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
             ||
-            <a href="{{route('back.userDestroy', $data->id)}}" class="btn btn-danger btn-sm dc"><i class="fa fa-trash"></i> Delete</a>
+            <form action="{{route('back.users.destroy', $data->id)}}" method="post">
+            @method('DELETE')
+            @csrf
+            <button class="btn btn-danger btn-sm dc"><i class="fa fa-trash"></i> Delete</button>
+            </form>
         </td>
         </tr>
         @endforeach
