@@ -5,12 +5,13 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Edit admin</h3>
-        <a href="{{route('back.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <a href="{{route('back.admins.index')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> All Admin</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('back.adminEdit', $data->id)}}">
+    <form role="form" method="post" action="{{route('back.admins.update', $data->id)}}">
         @csrf
+        @method('PATCH')
         <input type="hidden" name="type" value="info">
 
         <div class="box-body">
@@ -53,8 +54,8 @@
             <input name="address" type="text" class="form-control" placeholder="Address" value="{{old('address') ?? $data->address}}">
         </div>
         <div class="form-group">
-            <label>Small Information</label>
-            <textarea name="bio" id="" cols="30" rows="5" class="form-control" placeholder="Small Information">{{old('bio') ?? $data->bio}}</textarea>
+            <label>Bio</label>
+            <textarea name="bio" id="" cols="30" rows="5" class="form-control" placeholder="Bio">{{old('bio') ?? $data->bio}}</textarea>
         </div>
         </div>
         <!-- /.box-body -->
@@ -73,8 +74,9 @@
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('back.adminEdit', $data->id)}}">
+    <form role="form" method="post" action="{{route('back.admins.update', $data->id)}}">
         @csrf
+        @method('PATCH')
         <input type="hidden" name="type" value="password">
 
         <div class="box-body">

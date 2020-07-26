@@ -19,7 +19,7 @@ class AdminController extends Controller
     }
 
     // Admin list
-    public function admins(){
+    public function index(){
         $q = Admin::with('Roles')->latest()->get();
 
         return view('back.admin.index')->with([
@@ -59,82 +59,82 @@ class AdminController extends Controller
                 $aRole->save();
             }
 
-            return redirect()->route('back.admins')->with('success', 'Admin created successfully.');
+            return redirect()->route('back.admins.index')->with('success', 'Admin created successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }
 
     // Edit Admin
-    public function edit(Admin $q){
+    public function edit(Admin $admin){
         $roles = Role::get();
         return view('back.admin.edit')->with([
-            'data' => $q,
+            'data' => $admin,
             'roles' => $roles
         ]);
     }
 
+    public function show(Admin $admin){
+        return view('back.admin.show')->with([
+            'data' => $admin
+        ]);
+    }
+
     // Update
-    public function update(Request $request, Admin $q){
+    public function update(Request $request, Admin $admin){
         if($request->type == 'info'){
             $request->validate([
                 'first_name' => 'required|max:255',
                 'last_name' => 'required|max:255',
                 'title' => 'required|max:191',
-                'mobile_number' => 'required|unique:admins,mobile_number,' . $q->id,
-                'email' => 'required|unique:admins,email,' . $q->id,
+                'mobile_number' => 'required|unique:admins,mobile_number,' . $admin->id,
+                'email' => 'required|unique:admins,email,' . $admin->id,
                 'role' => 'required',
                 'address' => 'max:255',
             ]);
 
-            $q->first_name = $request->first_name;
-            $q->last_name = $request->last_name;
-            $q->mobile_number = $request->mobile_number;
-            $q->email = $request->email;
-            $q->address = $request->address;
-            $q->bio = $request->bio;
+            $admin->first_name = $request->first_name;
+            $admin->last_name = $request->last_name;
+            $admin->mobile_number = $request->mobile_number;
+            $admin->email = $request->email;
+            $admin->address = $request->address;
+            $admin->bio = $request->bio;
 
             // Update Role
-            DB::table('admin_roles')->where('admin_id', $q->id)->delete();
+            DB::table('admin_roles')->where('admin_id', $admin->id)->delete();
             foreach($request->role as $role){
                 $aRole = new AdminRole();
                 $aRole->role_id = $role;
-                $aRole->admin_id = $q->id;
+                $aRole->admin_id = $admin->id;
                 $aRole->save();
             }
         }else{
             $request->validate([
                 'password' => 'required|min:8|confirmed'
             ]);
-            $q->password = Hash::make($request->password);
+            $admin->password = Hash::make($request->password);
         }
 
-        if($q->save()){
+        if($admin->save()){
             return redirect()->back()->with('success', 'Admin updated successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }
 
     // Delete
-    public function destroy(Admin $q){
-        if($q->id == auth('back')->user()->id){
+    public function destroy(Admin $admin){
+        if($admin->id == auth('back')->user()->id){
             return redirect()->back()->with('error', 'Sorry! You can not delete your own account!');
-        }
-        $sAdmins = Admin::whereHas('Roles', function($q){
-            $q->where('slug', 'super-admin');
-        })->count();
-        if($sAdmins == 1){
-            return redirect()->back()->with('error', 'Sorry! ' . __('info.title') . ' must have a super back.');
         }
 
         // Delete Image
-        if($q->image){
-            $img = public_path() . '/uploads/admin/' . $q->image;
+        if($admin->image){
+            $img = public_path() . '/uploads/admin/' . $admin->image;
             if (file_exists($img)) {
                 unlink($img);
             }
         }
 
-        if($q->delete()){
+        if($admin->delete()){
             return redirect()->back()->with('success', 'Admin deleted successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');

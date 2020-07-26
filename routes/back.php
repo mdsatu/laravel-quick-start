@@ -15,12 +15,7 @@ Route::middleware('auth:back')->group(function (){
     Route::get('/',                     'Back\DashboardController@dashboard')           ->name('back.dashboard');
 
     // Admin CRUD
-    Route::get('admins',                'Back\AdminController@admins')                  ->name('back.admins');
-    Route::get('admin-create',          'Back\AdminController@create')                  ->name('back.adminCreate');
-    Route::post('admin-create',         'Back\AdminController@store');
-    Route::get('admin-edit/{q}',        'Back\AdminController@edit')                    ->name('back.adminEdit');
-    Route::post('admin-edit/{q}',       'Back\AdminController@update');
-    Route::get('admin-delete/{q}',      'Back\AdminController@destroy')                 ->name('back.adminDestroy');
+    Route::resource('admins', 'Back\AdminController', ['as' => 'back']);
 
     // User CRUD
     Route::resource('users', 'Back\UserController', ['as' => 'back']);

@@ -5,12 +5,12 @@
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Create new admin</h3>
-        <a href="{{route('back.admins')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
+        <a href="{{route('back.admins.index')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Admin List</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="post" action="{{route('back.adminCreate')}}">
-    @csrf
+    <form role="form" method="post" action="{{route('back.admins.store')}}">
+        @csrf
         <div class="box-body">
         <div class="row">
             <div class="col-md-6">
@@ -52,8 +52,8 @@
             <input name="address" type="text" class="form-control" placeholder="Address" value="{{old('address')}}">
         </div>
         <div class="form-group">
-            <label>Small Information</label>
-            <textarea name="bio" id="" cols="30" rows="5" class="form-control" placeholder="Small Information">{{old('bio')}}</textarea>
+            <label>Bio</label>
+            <textarea name="bio" id="" cols="30" rows="5" class="form-control" placeholder="Bio">{{old('bio')}}</textarea>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password*</label>

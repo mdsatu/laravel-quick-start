@@ -141,8 +141,8 @@
         </li>
         @endcan
         @can('isSuperAdmin')
-        <li class="{{(\Request::route()->getName() == 'back.admins') ? 'active' : ''}}">
-          <a href="{{route('back.admins')}}">
+        <li class="{{(\Request::route()->getName() == 'back.admins.index') ? 'active' : ''}}">
+          <a href="{{route('back.admins.index')}}">
           <i class="fa fa-user-secret"></i> <span>Admins</span>
           </a>
         </li>
