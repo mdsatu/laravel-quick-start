@@ -59,6 +59,16 @@ ul.npnls {
     padding: 0;
     list-style: none;
 }
-
+.btn_separator{
+    margin: 0 5px;
+}
 
 /* End Others Style */
+
+/* Dropdown Style */
+.dropdown-menu{padding: 0 15px;left: unset;right: 0;}
+.dropdown-menu .dropdown-item{display: block;
+    padding: 5px 0;}
+.dropdown-item button{border: none;background: none;padding: 0;}
+.dropdown-item button:focus{outline: none;}
+/* End Dropdown Style */

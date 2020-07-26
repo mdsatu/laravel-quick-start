@@ -1,11 +1,11 @@
 @extends('back.layouts.master')
-@section('title', 'Edit User')
+@section('title', 'Edit User - ' . $data->Name())
 
 @section('master')
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title">Edit User</h3>
-        <a href="{{route('back.users.index')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> Users List</a>
+        <a href="{{route('back.users.index')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-list"></i> All User</a>
     </div>
     <!-- /.box-header -->
     <!-- form start -->

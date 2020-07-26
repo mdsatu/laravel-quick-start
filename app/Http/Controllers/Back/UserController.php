@@ -69,6 +69,14 @@ class UserController extends Controller
         ]);
     }
 
+    // Show
+    public function show(User $user)
+    {
+        return view('back.users.show')->with([
+            'data' => $user
+        ]);
+    }
+
     /**
      * Update the specified resource in storage.
      *
