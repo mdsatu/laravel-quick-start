@@ -7,7 +7,12 @@
 
         <title>LaravelQS</title>
 
-        <meta name="author" content="MD Satu" />
+        <!-- Meta Manager -->
+        @include('meta::manager', [
+            'title'         => 'My Example Title',
+            'description'   => 'This is my example description',
+            'image'         => 'Url to the image',
+        ])
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
