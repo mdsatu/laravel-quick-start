@@ -45,9 +45,9 @@ return [
             'provider' => 'admins',
         ],
 
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+        'back_api' => [
+            'driver' => 'passport',
+            'provider' => 'admins',
             'hash' => false,
         ],
     ],

@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 // use Illuminate\Support\Facades\Gate;
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -47,5 +48,7 @@ class AuthServiceProvider extends ServiceProvider
 
             return (in_array('super-admin', $adminRoles) || in_array('admin', $adminRoles));
         });
+
+        Passport::routes();
     }
 }

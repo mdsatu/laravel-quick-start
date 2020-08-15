@@ -22,9 +22,7 @@ class AdminController extends Controller
     public function index(){
         $q = Admin::with('Roles')->latest()->get();
 
-        return view('back.admin.index')->with([
-            'q' => $q
-        ]);
+        return view('back.admin.index', compact('q'));
     }
 
     // Create Admin
