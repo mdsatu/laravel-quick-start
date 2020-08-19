@@ -22,4 +22,5 @@ Route::post('login', 'Api\AuthController@login');
 
 Route::middleware('auth:back_api')->group(function () {
     Route::get('me', 'Api\ProfileController@profile');
+    Route::post('me', 'Api\ProfileController@update');
 });

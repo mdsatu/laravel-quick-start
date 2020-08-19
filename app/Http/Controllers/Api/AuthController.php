@@ -18,7 +18,7 @@ class AuthController extends Controller
         if (Auth::guard('back')->attempt(['email' => $request->email, 'password' => $request->password])) {
             $user = Auth::guard('back')->user();
 
-            $token = $user->createToken($user->email . '-' . now());
+            $token = $user->createToken($user->email . '-back-' . now());
 
             return response()->json([
                 'token' => $token->accessToken

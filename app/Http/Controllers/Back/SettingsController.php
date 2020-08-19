@@ -88,7 +88,7 @@ class SettingsController extends Controller
             $photo = 'logo.' . $file->getClientOriginalExtension();
             $destination = public_path() . '/uploads/info';
             $file->move($destination, $photo);
-            
+
             // Store logo
             $where['name'] = 'logo';
             $insert['value'] = $photo;
@@ -114,7 +114,7 @@ class SettingsController extends Controller
             $photo = 'favicon.' . $file->getClientOriginalExtension();
             $destination = public_path() . '/uploads/info';
             $file->move($destination, $photo);
-            
+
             // Store Favicon
             $where['name'] = 'favicon';
             $insert['value'] = $photo;
