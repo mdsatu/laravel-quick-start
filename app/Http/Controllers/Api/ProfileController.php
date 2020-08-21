@@ -32,17 +32,33 @@ class ProfileController extends Controller
         $q->mobile_number = $request->mobile_number;
         $q->address = $request->address;
 
-        if ($request->file('image')) {
-            $this->validate($request, [
-                'image' => 'image|mimes:jpg,png,jpeg,gif'
-            ]);
+        // if ($request->file('profile_picture')) {
+        //     $this->validate($request, [
+        //         'profile_picture' => 'image|mimes:jpg,png,jpeg,gif'
+        //     ]);
 
-            $file = $request->file('image');
-            $photo = time() . '.' . $file->getClientOriginalExtension();
-            // Resize Image 120*120
-            $image_resize = Image::make($file->getRealPath());
-            $image_resize->resize(120, 120);
-            $image_resize->save(public_path('/uploads/admin/' . $photo));
+        //     $file = $request->file('profile_picture');
+        //     $photo = time() . '.' . $file->getClientOriginalExtension();
+        //     // Resize Image 120*120
+        //     $image_resize = Image::make($file->getRealPath());
+        //     $image_resize->resize(120, 120);
+        //     $image_resize->save(public_path('/uploads/admin/' . $photo));
+
+        //     // Delete old
+        //     if ($q->image) {
+        //         $img = public_path() . '/uploads/admin/' . $q->image;
+        //         if (file_exists($img)) {
+        //             unlink($img);
+        //         }
+        //     }
+        //     $q->image = $photo;
+        // }
+
+        // Update Image
+        if ($request->profile_picture) {
+            $name = time() . '.' . explode('/', explode(':', substr($request->profile_picture, 0, strpos($request->profile_picture, ';')))[1])[1];
+            Image::make($request->profile_picture)->resize(120, 120)->save(public_path('uploads/admin/') . $name);
+            // $request->merge(['photo' => $name]);
 
             // Delete old
             if ($q->image) {
@@ -51,7 +67,7 @@ class ProfileController extends Controller
                     unlink($img);
                 }
             }
-            $q->image = $photo;
+            $q->image = $name;
         }
 
         $q->save();

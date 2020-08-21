@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('login', 'Api\AuthController@login');
+Route::post('logout', 'Api\AuthController@logout');
 
 Route::middleware('auth:back_api')->group(function () {
     Route::get('me', 'Api\ProfileController@profile');
