@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 //General Pages
 Route::get('/',                         'Front\PageController@homepage')             ->name('homepage');
 
@@ -7,4 +9,4 @@ Route::get('/',                         'Front\PageController@homepage')        
 Route::post('logout',                   'Auth\LoginController@logout')               ->name('logout');
 
 // Route::get('test',                     'TestController@index')                          ->name('test');
-// Route::get('default-config',           'TestController@defaultConfig')                  ->name('defaultConfig');
+Route::get('setup',                     'TestController@defaultConfig')                  ->name('defaultConfig');
