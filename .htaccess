@@ -25,17 +25,3 @@
     RewriteCond %{REQUEST_URI} !^/public/
     RewriteRule ^(.*)$ /public/$1 [L,QSA]
 </IfModule>
-
-# Disable Directory listing
-<Files ~ "^.*\.([Ee][Nn][Vv])">
- order allow,deny
- deny from all
- satisfy all
-</Files>
-
-# Prevent direct access to certain files
-<FilesMatch ^((.*)\.json$|(.*)\.lock$|(.*)\.xml$|(.*)\.wsdl$|(.*)\.config$|artisan$|.env.example$|.gitattributes$|.gitignore)$>
- order allow,deny
- deny from all
- satisfy all
-</FilesMatch>
