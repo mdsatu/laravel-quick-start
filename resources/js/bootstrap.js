@@ -10,8 +10,19 @@ try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap');
-} catch (e) {}
+    require('admin-lte/bower_components/bootstrap/dist/js/bootstrap');
+    require('admin-lte');
+
+    // Datatable
+    require('admin-lte/bower_components/datatables.net/js/jquery.dataTables');
+    require('admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap');
+
+    require('./back-common');
+
+    // require('font-awesome');
+    // require('admin-lte/dist/js/demo');
+    // require('admin-lte/plugins/pace/pace');
+} catch (e) { }
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

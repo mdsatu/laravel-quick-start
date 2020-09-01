@@ -827,7 +827,7 @@
 <!-- ChartJS -->
 <script src="{{asset('back/plugins/Chart.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('back/dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{asset('back/examples/dashboard2.js')}}"></script>
 <!-- Sparkline -->
 <script src="{{asset('back/plugins/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
 <!-- jvectormap  -->

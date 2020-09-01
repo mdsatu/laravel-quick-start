@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="{{__('info.favicon')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
+  {{-- <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{asset('back/bootstrap/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('back/font-awesome/css/font-awesome.min.css')}}">
@@ -22,11 +22,9 @@
   <!-- Pace style -->
   <link rel="stylesheet" href="{{asset('back/plugins/pace/pace.min.css')}}">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{asset('back/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('back/css/style.css')}}"> --}}
 
   <meta name="author" content="MD Satu" />
-
-  @yield('head')
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,6 +36,10 @@
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
+  @yield('head')
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -45,7 +47,7 @@
     @csrf
 </form>
 
-<div class="wrapper">
+<div class="wrapper" id="app">
   <header class="main-header">
 
     <!-- Logo -->
@@ -205,7 +207,7 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
+{{-- <!-- jQuery 3 -->
 <script src="{{asset('back/js/jquery.min.js')}}"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('back/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -220,7 +222,9 @@
 <!-- sweetalert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
 <!-- Custom JS -->
-<script src="{{asset('back/js/main.js')}}"></script>
+<script src="{{asset('back/js/main.js')}}"></script> --}}
+
+<script src="{{asset('js/app.js')}}"></script>
 
 @yield('footer')
 </body>
