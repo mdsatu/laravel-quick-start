@@ -28,8 +28,8 @@
         <td>{{$data->username ?? 'N/A'}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
-        <td class="pull-right">
-            <div class="dropdown">
+        <td>
+            <div class="dropdown pull-right">
             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Action <i class="fa fa-angle-down"></i>
             </button>

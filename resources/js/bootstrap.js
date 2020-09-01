@@ -17,6 +17,7 @@ try {
     require('admin-lte/bower_components/datatables.net/js/jquery.dataTables');
     require('admin-lte/bower_components/datatables.net-bs/js/dataTables.bootstrap');
 
+
     require('./back-common');
 
     // require('font-awesome');

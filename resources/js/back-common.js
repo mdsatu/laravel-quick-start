@@ -1,26 +1,26 @@
-// // Ajax Loader
-// $(document).ajaxStart(function() {
-//     Pace.restart()
-// });
-
-import Swal from 'sweetalert2';
-
 // Loader Function
-function loader(type = 'show') {
+const loader = function loader(type = 'show') {
     if (type == 'show') {
-        $('.loader').show();
+        return $('.loader').show();
     } else {
-        $('.loader').hide();
+        return $('.loader').hide();
     }
 }
+window.loader = loader;
 
 // Delete Confirm Alert
-$(document).on('click', '.dc', function() {
+$(document).on('click', '.dc', function () {
     return confirm('Are you sure to remove?');
 });
 
 //Active Sidebar Menu
 $('.treeview-menu li.active').closest('.treeview').addClass('active');
+
+// Make Custom Alert
+
+
+import Swal from 'sweetalert2';
+// window.Swal = Swal;
 
 // Alert Script
 const Toast = Swal.mixin({
@@ -30,8 +30,9 @@ const Toast = Swal.mixin({
     background: '#E5F3FE',
     timer: 3000
 });
+window.Toast = Toast;
 
-function alert(status = 'e', message = 'Something wrong!') {
+const cAlert = function cAlert(status = 'e', message = 'Something wrong!') {
     let icon;
     if (status == 's') {
         icon = 'success';
@@ -41,8 +42,9 @@ function alert(status = 'e', message = 'Something wrong!') {
     } else {
         icon = 'error';
     }
-    Toast.fire({
+    return Toast.fire({
         icon: icon,
         title: message
     });
 }
+window.cAlert = cAlert;

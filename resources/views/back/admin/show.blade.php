@@ -4,9 +4,11 @@
 @section('master')
 <div class="box box-primary">
     <div class="box-header with-border">
-        <a href="{{route('back.admins.index')}}" class="btn btn-success btn-sm pull-right"><i class="fa fa-list"></i> All Admin</a>
+        <a href="{{route('back.admins.index')}}" class="btn btn-success btn-sm pull-right"><i class="fa fa-list"></i> All Admins</a>
         <span class="pull-right btn_separator">||</span>
         <a href="{{route('back.admins.create')}}" class="btn btn-primary btn-sm pull-right"><i class="fa fa-plus"></i> Create Admin</a>
+        <span class="pull-right btn_separator">||</span>
+        <a href="{{route('back.admins.edit', $data->id)}}" class="btn btn-info btn-sm pull-right"><i class="fa fa-edit"></i> Edit Admin</a>
         <span class="pull-right btn_separator">||</span>
         <form action="{{route('back.admins.destroy', $data->id)}}" method="post" class="pull-right">
             @method('DELETE')

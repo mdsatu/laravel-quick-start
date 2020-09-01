@@ -8,21 +8,6 @@
   <link rel="shortcut icon" href="{{__('info.favicon')}}" type="image/x-icon" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  {{-- <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="{{asset('back/bootstrap/css/bootstrap.min.css')}}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('back/font-awesome/css/font-awesome.min.css')}}">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="{{asset('back/Ionicons/css/ionicons.min.css')}}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('back/dist/css/AdminLTE.min.css')}}">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="{{asset('back/dist/css/skins/_all-skins.min.css')}}">
-  <!-- Pace style -->
-  <link rel="stylesheet" href="{{asset('back/plugins/pace/pace.min.css')}}">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{asset('back/css/style.css')}}"> --}}
 
   <meta name="author" content="MD Satu" />
 
@@ -179,7 +164,7 @@
     </section>
 
     <!-- Main content -->
-  <section class="content">
+    <section class="content">
         @if(isset($errors))
             @include('back.extra.error-validation')
         @endif
@@ -206,23 +191,6 @@
   </footer>
 </div>
 <!-- ./wrapper -->
-
-{{-- <!-- jQuery 3 -->
-<script src="{{asset('back/js/jquery.min.js')}}"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{asset('back/bootstrap/js/bootstrap.min.js')}}"></script>
-<!-- FastClick -->
-<script src="{{asset('back/plugins/fastclick.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('back/dist/js/adminlte.min.js')}}"></script>
-<!-- slimscroll -->
-<script src="{{asset('back/plugins/jquery.slimscroll.min.js')}}"></script>
-<!-- PACE -->
-<script src="{{asset('back/plugins/pace/pace.min.js')}}"></script>
-<!-- sweetalert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.3.0/dist/sweetalert2.all.min.js"></script>
-<!-- Custom JS -->
-<script src="{{asset('back/js/main.js')}}"></script> --}}
 
 <script src="{{asset('js/app.js')}}"></script>
 
