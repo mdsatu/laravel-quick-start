@@ -19,10 +19,12 @@ class User extends Authenticatable
         'first_name', 'last_name', 'username', 'gander', 'email', 'mobile_number', 'address', 'bio', 'image', 'password',
     ];
 
-    // Generate Name
-    public function Name(){
-        return ($this->first_name ? ($this->first_name . ' ' . $this->last_name) : $this->last_name);
-    }
+    /**
+     * appends
+     *
+     * @var array
+     */
+    protected $appends = ['full_name'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * getFullNameAttribute
+     *
+     * @return void
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
 }

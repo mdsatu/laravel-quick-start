@@ -25,7 +25,7 @@ class CreateAdminsTable extends Migration
             $table->string('password');
             $table->boolean('status')->default(1);
             $table->text('bio')->nullable();
-            $table->string('image')->nullable();
+            $table->string('profile')->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

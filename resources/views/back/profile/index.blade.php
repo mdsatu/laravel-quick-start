@@ -8,9 +8,9 @@
     <!-- Profile Image -->
     <div class="box box-primary">
     <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="{{auth('back')->user()->image ? asset('uploads/admin/' . auth('back')->user()->image) : asset('img/user-img.png')}}" alt="{{auth('back')->user()->Name()}}">
+        <img class="profile-user-img img-responsive img-circle" src="{{auth('back')->user()->profile}}" alt="{{auth('back')->user()->full_name}}">
 
-        <h3 class="profile-username text-center">{{auth('back')->user()->Name()}}</h3>
+        <h3 class="profile-username text-center">{{auth('back')->user()->full_name}}</h3>
         <p class="text-muted text-center">{{auth('back')->user()->title}}</p>
 
         <ul class="list-group list-group-unbordered">

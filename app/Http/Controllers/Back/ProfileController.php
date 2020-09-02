@@ -25,6 +25,7 @@ class ProfileController extends Controller
             $request->validate([
                 'first_name' => 'required|max:255',
                 'last_name' => 'required|max:255',
+                'bio' => 'max:1000',
                 'email' => 'required|max:255|unique:admins,email,' . $q->id,
                 'mobile_number' => 'required|max:255|unique:admins,mobile_number,' . $q->id
             ]);
@@ -49,13 +50,13 @@ class ProfileController extends Controller
                 $image_resize->save(public_path('/uploads/admin/' . $photo));
 
                 // Delete old
-                if($q->image){
-                    $img = public_path() . '/uploads/admin/' . $q->image;
+                if($q->profile){
+                    $img = public_path() . '/uploads/admin/' . $q->profile;
                     if (file_exists($img)) {
                         unlink($img);
                     }
                 }
-                $q->image = $photo;
+                $q->profile = $photo;
             }
 
             $route = route('back.profile') . '?ref=info';

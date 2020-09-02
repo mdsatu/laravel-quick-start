@@ -25,7 +25,7 @@
         @foreach($q as $data)
         <tr>
         <td>{{$data->id}}</td>
-        <td>{{$data->Name()}}</td>
+        <td>{{$data->full_name}}</td>
         <td>{{$data->title}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>
@@ -34,8 +34,8 @@
         {{$role->title}},
         @endforeach
         </td>
-        <td class="pull-right">
-            <div class="dropdown">
+        <td>
+            <div class="dropdown pull-right">
             <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Action <i class="fa fa-angle-down"></i>
             </button>

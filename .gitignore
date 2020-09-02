@@ -9,6 +9,7 @@
 *.tgz
 *.tar
 .env.backup
+.vscode
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

@@ -24,7 +24,7 @@
         @foreach($q as $data)
         <tr>
         <td>{{$data->id}}</td>
-        <td>{{$data->Name()}}</td>
+        <td>{{$data->full_name}}</td>
         <td>{{$data->username ?? 'N/A'}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->mobile_number}}</td>

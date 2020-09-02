@@ -70,8 +70,14 @@ ul.npnls {
 .dropdown-menu{padding: 0 15px;left: unset;right: 0;}
 .dropdown-menu .dropdown-item{display: block;
     padding: 5px 0;}
-.dropdown-item button{border: none;background: none;padding: 0;}
+.dropdown-item button{border: none;
+    background: none;
+    padding: 0;
+    display: block;
+    width: 100%;
+    text-align: left;}
 .dropdown-item button:focus{outline: none;}
+.dropdown-item button:hover{    text-decoration: underline;}
 /* End Dropdown Style */
 
 /********************************** End My Custom Style **********************************/

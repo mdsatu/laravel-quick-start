@@ -11,10 +11,27 @@ class Admin extends Authenticatable
 {
     use Notifiable, HasApiTokens;
 
+    /**
+     * guard
+     *
+     * @var string
+     */
     protected $guard = 'back';
 
+    /**
+     * appends
+     *
+     * @var array
+     */
+    protected $appends = ['full_name'];
+
+    /**
+     * fillable
+     *
+     * @var array
+     */
     protected $fillable = [
-        'first_name', 'last_name', 'title', 'email', 'mobile_number', 'address', 'bio', 'image', 'password',
+        'first_name', 'last_name', 'title', 'email', 'mobile_number', 'address', 'bio', 'profile', 'password',
     ];
 
     /**
@@ -23,22 +40,63 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'first_name', 'last_name', 'id'
     ];
 
-    // Generate Name
-    public function Name(){
-        return ($this->first_name ? ($this->first_name . ' ' . $this->last_name) : $this->last_name);
-    }
+    /**
+     * casts
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'status' => 'boolean',
+        'created_at' => 'date:d-m-Y',
+        'updated_at' => 'date:d-m-Y'
+    ];
 
-    // Role
+    /**
+     * Roles
+     *
+     * @return void
+     */
     public function Roles(){
         return $this->belongsToMany(Role::class, 'admin_roles');
     }
 
-    // AdminResetPasswordNotification
+    /**
+     * sendPasswordResetNotification
+     *
+     * @param  mixed $token
+     * @return void
+     */
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminResetPasswordNotification($token));
+    }
+
+    /**
+     * getFullNameAttribute
+     *
+     * @return void
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
+    /**
+     * getProfileAttribute
+     *
+     * @param  mixed $value
+     * @return void
+     */
+    public function getProfileAttribute($value)
+    {
+        if($value && file_exists(public_path('uploads/admin/' . $value))){
+            return asset('uploads/admin/' . $value);
+        }
+
+        return asset('img/user-img.png');
     }
 }
