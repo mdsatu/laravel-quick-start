@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title', 'Edit Admin')
+@section('title', 'Edit Admin - ' . $data->full_name)
 
 @section('master')
 <div class="box box-primary">
