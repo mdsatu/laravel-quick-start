@@ -3,9 +3,10 @@
 ## [Application Preview](https://laravelqs.herokuapp.com/)
 **[Click to preview this application](https://laravelqs.herokuapp.com/)**
 
+
 ## About LaravelQS
 
-LaravelQS is a quick start backend functionality. I have done some common functionality that we use in every project regularly. The available features and functionality of this package are:
+[LaravelQS](http://laravelqs.herokuapp.com/) is a quick start backend views and functionality. In this project, we have done some common functionality that we use in every project regularly. The available features and functionality of this package are:
 
 
 - Dashboard design with [AdminLTE v2.4.18](http://adminlte.io/themes/AdminLTE/index2.html).
