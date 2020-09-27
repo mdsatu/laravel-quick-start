@@ -17,7 +17,8 @@
         "laravel/framework": "^7.0",
         "laravel/passport": "^9.3",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0"
+        "laravel/ui": "^2.0",
+        "mdsatu/switcher": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14d51f6dab030c72b62b278b42bbe0b3",
+    "content-hash": "ec20bc2ee2509c963781746dc174a779",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1862,6 +1862,48 @@
                 }
             ],
             "time": "2020-07-01T11:33:50+00:00"
+        },
+        {
+            "name": "mdsatu/switcher",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mdsatu/switcher.git",
+                "reference": "1c6708d8db397e4047113478018f2c6c889d80cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mdsatu/switcher/zipball/1c6708d8db397e4047113478018f2c6c889d80cd",
+                "reference": "1c6708d8db397e4047113478018f2c6c889d80cd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DWK\\Switcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MD Satu",
+                    "email": "mdsatu.pro@gmail.com",
+                    "homepage": "https://mdsatu.com"
+                }
+            ],
+            "description": "Laravel database table status switcher",
+            "homepage": "https://github.com/mdsatu/switcher",
+            "keywords": [
+                "Switch column value",
+                "switcher"
+            ],
+            "time": "2020-09-09T06:23:47+00:00"
         },
         {
             "name": "monolog/monolog",
