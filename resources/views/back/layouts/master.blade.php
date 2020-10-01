@@ -22,7 +22,7 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-  <link href="{{asset('css/app.css')}}" rel="stylesheet">
+  <link href="{{asset('back/css/app.css')}}" rel="stylesheet">
 
   @yield('head')
 </head>
@@ -401,7 +401,7 @@
 </div>
 <!-- ./wrapper -->
 
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('back/js/app.js')}}"></script>
 
 @yield('footer')
 </body>
