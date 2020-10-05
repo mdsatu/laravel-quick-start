@@ -14,6 +14,8 @@
             'image'         => __('info.logo'),
         ])
 
+        <link href="{{asset('front/css/app.css')}}" rel="stylesheet">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -97,5 +99,7 @@
                 <p>{{__('info.copyright')}} || Developed By <a href="https://mdsatu.com" style="text-decoration:none;font-weight:700">MD Satu</a></p>
             </div>
         </div>
+
+        <script src="{{asset('front/js/app.js')}}"></script>
     </body>
 </html>

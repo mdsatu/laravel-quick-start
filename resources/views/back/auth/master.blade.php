@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <link href="{{asset('back/css/app.css')}}" rel="stylesheet">
+
+  <link rel="icon" sizes="192x192" href="{{__('info.favicon')}}">
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
