@@ -21,7 +21,9 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <!-- Styles -->
   <link href="{{asset('back/css/app.css')}}" rel="stylesheet">
+  <link href="{{asset('back/css/style.css')}}" rel="stylesheet">
 
   <link rel="icon" sizes="192x192" href="{{__('info.favicon')}}">
 </head>
