@@ -1,12 +1,12 @@
 // Loader Function
-const loader = function loader(type = 'show') {
+const cLoader = function cLoader(type = 'show') {
     if (type == 'show') {
         return $('.loader').show();
     } else {
         return $('.loader').hide();
     }
 }
-window.loader = loader;
+window.cLoader = cLoader;
 
 // Delete Confirm Alert
 $(document).on('click', '.dc', function () {
