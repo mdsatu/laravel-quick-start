@@ -96,7 +96,7 @@
 
                 <p><b>Login to <a href="{{route('back.login')}}">Admin Panel</a></b></p>
 
-                <p>{{__('info.copyright')}} || Developed By <a href="https://mdsatu.com" style="text-decoration:none;font-weight:700">MD Satu</a></p>
+                <p>{{__('info.copyright')}} || Developed By <a href="https://mdsatu.github.io" style="text-decoration:none;font-weight:700">MD Satu</a></p>
             </div>
         </div>
 

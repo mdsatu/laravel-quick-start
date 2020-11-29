@@ -42,6 +42,12 @@
 </div>
 <!-- /.login-box -->
 
+<div class="conterner copyright">
+    <div class="text-center" style="margin-bottom: 25px;">
+        <strong>{{__('info.copyright')}} | Developed by <a target="_blank" href="https://mdsatu.github.io">MD Satu</a></strong>
+    </div>
+</div>
+
 <script src="{{asset('back/js/app.js')}}"></script>
 </body>
 </html>
