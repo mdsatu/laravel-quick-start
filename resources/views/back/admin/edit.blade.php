@@ -34,12 +34,12 @@
             <input name="title" type="text" class="form-control" placeholder="Title" value="{{old('title') ?? $data->title}}" required>
         </div>
         <div class="form-group">
-            <label for="mobile">Mobile Number*</label>
-            <input name="mobile_number" type="number" class="form-control" id="mobile" placeholder="Mobile Number" value="{{old('mobile_number') ?? $data->mobile_number}}" required>
+            <label>Mobile Number*</label>
+            <input name="mobile_number" type="number" class="form-control" placeholder="Mobile Number" value="{{old('mobile_number') ?? $data->mobile_number}}" required>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email') ?? $data->email}}">
+            <label>Email address</label>
+            <input name="email" type="email" class="form-control" placeholder="Enter email" value="{{old('email') ?? $data->email}}">
         </div>
         <div class="form-group">
             <label>Select Role*</label>
@@ -81,12 +81,12 @@
 
         <div class="box-body">
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label>Password</label>
+            <input name="password" type="password" class="form-control" placeholder="Password">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword2">Confirm Password</label>
-            <input name="password_confirmation" type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password">
+            <label>Confirm Password</label>
+            <input name="password_confirmation" type="password" class="form-control" placeholder="Confirm Password">
         </div>
         </div>
         <!-- /.box-body -->

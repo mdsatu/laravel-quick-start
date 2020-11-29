@@ -43,10 +43,10 @@
             <input type="hidden" name="action" value="information">
 
             <div class="form-group">
-            <label for="inputName" class="col-sm-2 control-label">First Name*</label>
+            <label class="col-sm-2 control-label">First Name*</label>
 
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName" placeholder="First Name" name="first_name" value="{{old('first_name') ?? auth('back')->user()->first_name}}" required>
+                <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{old('first_name') ?? auth('back')->user()->first_name}}" required>
             </div>
             </div>
             <div class="form-group">
@@ -57,10 +57,10 @@
             </div>
             </div>
             <div class="form-group">
-            <label for="inputEmail" class="col-sm-2 control-label">Email*</label>
+            <label class="col-sm-2 control-label">Email*</label>
 
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" value="{{old('email') ?? auth('back')->user()->email}}" required>
+                <input type="email" class="form-control" placeholder="Email" name="email" value="{{old('email') ?? auth('back')->user()->email}}" required>
             </div>
             </div>
             <div class="form-group">
@@ -88,7 +88,7 @@
             <label class="col-sm-2 control-label">Change Picture</label>
 
             <div class="col-sm-10">
-                <input type="file" id="image" name="image" accept="image/*">
+                <input type="file" name="image" accept="image/*">
                 <small><b>NB:</b> Best size for image are 120px height and 120px width.</small>
             </div>
             </div>

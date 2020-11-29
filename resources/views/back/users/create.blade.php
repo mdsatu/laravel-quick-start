@@ -29,14 +29,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="mobile">Mobile Number*</label>
-                    <input name="mobile_number" type="number" class="form-control" id="mobile" placeholder="Mobile Number" value="{{old('mobile_number')}}" required>
+                    <label>Mobile Number*</label>
+                    <input name="mobile_number" type="number" class="form-control" placeholder="Mobile Number" value="{{old('mobile_number')}}" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address*</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" value="{{old('email')}}" required>
+                    <label>Email address*</label>
+                    <input name="email" type="email" class="form-control" placeholder="Enter email" value="{{old('email')}}" required>
                 </div>
             </div>
         </div>
@@ -46,12 +46,12 @@
             <input name="address" type="text" class="form-control" placeholder="Address" value="{{old('address')}}">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password*</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+            <label>Password*</label>
+            <input name="password" type="password" class="form-control" placeholder="Password" required>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword2">Confirm Password*</label>
-            <input name="password_confirmation" type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" required>
+            <label>Confirm Password*</label>
+            <input name="password_confirmation" type="password" class="form-control" placeholder="Confirm Password" required>
         </div>
         </div>
         <!-- /.box-body -->
