@@ -5,10 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{__('info.favicon')}}" type="image/x-icon" />
 
-        <title>Laravel Quick Start</title>
-
         <!-- Meta Manager -->
         @include('meta::manager', [
+            'title'         => 'Laravel Quick Start'
             'description'   => 'Laravel quick start example description',
             'image'         => __('info.logo'),
         ])
