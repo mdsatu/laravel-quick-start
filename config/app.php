@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Davmixcool\MetaManager\MetaServiceProvider::class,
+        DWK\Switcher\SwitcherServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -231,7 +232,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
 
     ],
-    
+
     'debug_blacklist' => [
         '_SERVER' => array_keys($_ENV),
         '_ENV' => array_keys($_ENV),
