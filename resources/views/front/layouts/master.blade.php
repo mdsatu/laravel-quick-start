@@ -7,7 +7,7 @@
 
         <!-- Meta Manager -->
         @include('meta::manager', [
-            'title'         => 'Laravel Quick Start'
+            'title'         => 'Laravel Quick Start',
             'description'   => 'Laravel quick start example description',
             'image'         => __('info.logo'),
         ])

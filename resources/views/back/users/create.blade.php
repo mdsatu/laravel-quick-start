@@ -35,8 +35,8 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Email address*</label>
-                    <input name="email" type="email" class="form-control" placeholder="Enter email" value="{{old('email')}}" required>
+                    <label>Email address</label>
+                    <input name="email" type="email" class="form-control" placeholder="Enter email" value="{{old('email')}}">
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ class UserController extends Controller
             'email' => 'max:255|unique:users',
             'mobile_number' => 'required|max:255|unique:users',
             'address' => 'max:255',
-            'password' => 'required|min:8|confirmed'
+            'password' => 'required|min:6|confirmed'
         ]);
         $request['password'] = Hash::make($request->password);
 
@@ -96,7 +96,7 @@ class UserController extends Controller
             ]);
         }else{
             $request->validate([
-                'password' => 'required|min:8|confirmed'
+                'password' => 'required|min:6|confirmed'
             ]);
         }
 
