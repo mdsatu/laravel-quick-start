@@ -403,6 +403,8 @@
 
 <script src="{{asset('back/js/app.js')}}"></script>
 
+@include('switcher::code')
+
 @yield('footer')
 </body>
 </html>

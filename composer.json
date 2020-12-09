@@ -18,7 +18,8 @@
         "laravel/passport": "^9.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "mdsatu/switcher": "^1.4"
+        "mdsatu/switcher": "^1.4",
+        "spatie/laravel-backup": "^6.13"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
