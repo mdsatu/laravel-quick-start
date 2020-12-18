@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-//General Pages
+// General Pages
 Route::get('/',                         'Front\PageController@homepage')             ->name('homepage');
 
 // Auth

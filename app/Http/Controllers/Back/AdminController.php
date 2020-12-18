@@ -36,16 +36,20 @@ class AdminController extends Controller
 
     // Store Admin
     public function store(Request $request){
-        $request->validate([
+        $v_data = [
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'title' => 'required|max:255',
             'mobile_number' => 'required|unique:admins',
-            'email' => 'required|unique:admins',
             'role' => 'required',
             'address' => 'max:255',
             'password' => 'required|min:8|confirmed'
-        ]);
+        ];
+        if($request->email){
+            $v_data ['email'] = 'required|unique:admins';
+        }
+
+        $request->validate($v_data);
         $request['password'] = Hash::make($request->password);
 
         if($query = Admin::create($request->all())){
@@ -80,18 +84,22 @@ class AdminController extends Controller
     // Update
     public function update(Request $request, Admin $admin){
         if($request->type == 'info'){
-            $request->validate([
+            $v_data = [
                 'first_name' => 'required|max:255',
                 'last_name' => 'required|max:255',
                 'title' => 'required|max:191',
                 'mobile_number' => 'required|unique:admins,mobile_number,' . $admin->id,
-                'email' => 'required|unique:admins,email,' . $admin->id,
                 'role' => 'required',
                 'address' => 'max:255',
-            ]);
+            ];
+            if($request->email){
+                $v_data ['email'] = 'required|unique:admins,email,' . $admin->id;
+            }
+            $request->validate($v_data);
 
             $admin->first_name = $request->first_name;
             $admin->last_name = $request->last_name;
+            $admin->title = $request->title;
             $admin->mobile_number = $request->mobile_number;
             $admin->email = $request->email;
             $admin->address = $request->address;

@@ -46,7 +46,7 @@ class ProfileController extends Controller
                 $photo = time() . '.' . $file->getClientOriginalExtension();
                 // Resize Image 120*120
                 $image_resize = Image::make($file->getRealPath());
-                $image_resize->resize(120, 120);
+                $image_resize->fit(120, 120);
                 $image_resize->save(public_path('/uploads/admin/' . $photo));
 
                 // Delete old
