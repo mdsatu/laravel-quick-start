@@ -41,11 +41,11 @@
             </tr>
             <tr>
                 <td>Email address:</td>
-                <td>{{$data->email}}</td>
+                <td>{{$data->email ?? 'N/A'}}</td>
             </tr>
             <tr>
                 <td>Address:</td>
-                <td>{{$data->address}}</td>
+                <td>{{$data->address ?? 'N/A'}}</td>
             </tr>
             </tbody>
             <tfoot>

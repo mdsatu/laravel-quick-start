@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="{{__('info.favicon')}}" type="image/x-icon" />
+        <link rel="shortcut icon" href="{{env('APP_URL') . '/uploads/info/' . ($settings_g['favicon'] ?? '')}}" type="image/x-icon" />
 
         <!-- Meta Manager -->
         @include('meta::manager', [
             'title'         => 'Laravel Quick Start',
             'description'   => 'Laravel quick start example description',
-            'image'         => __('info.logo'),
+            'image'         => env('APP_URL') . '/uploads/info/' . ($settings_g['logo'] ?? ''),
         ])
 
         <link href="{{asset('front/css/app.css')}}" rel="stylesheet">
@@ -94,7 +94,7 @@
 
                 <p><b>Login to <a href="{{route('back.login')}}">Admin Panel</a></b></p>
 
-                <p>{{__('info.copyright')}} || Developed By <a href="https://mdsatu.github.io" style="text-decoration:none;font-weight:700">MD Satu</a></p>
+                <p>{{$settings_g['copyright'] ?? env('PROJECT_COPYRIGHT')}} || Developed By <a href="https://mdsatu.github.io" style="text-decoration:none;font-weight:700">MD Satu</a></p>
             </div>
         </div>
 
