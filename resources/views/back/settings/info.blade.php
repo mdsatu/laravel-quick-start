@@ -72,6 +72,45 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Website Primary Color</label>
+                        <input type="text" class="form-control" name="primary_color" placeholder="Website Primary Color" value="{{old('primary_color') ?? Info::web('general', 'primary_color')}}">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Website Secondary Color</label>
+                        <input type="text" class="form-control" name="secondary_color" placeholder="Website Secondary Color" value="{{old('secondary_color') ?? Info::web('general', 'secondary_color')}}">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Website Background Color</label>
+                        <input type="text" class="form-control" name="background_color" placeholder="Website Background Color" value="{{old('background_color') ?? Info::web('general', 'background_color')}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Custom head code</label>
+                <textarea name="custom_head_code" class="form-control" cols="30" rows="7">{{Info::web('general', 'custom_head_code')}}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Custom body code</label>
+                <textarea name="custom_body_code" class="form-control" cols="30" rows="7">{{Info::web('general', 'custom_body_code')}}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Custom footer code</label>
+                <textarea name="custom_footer_code" class="form-control" cols="30" rows="7">{{Info::web('general', 'custom_footer_code')}}</textarea>
+            </div>
+            {{-- <div class="row">
+                <div class="col-md-6">
+                </div>
+            </div> --}}
         </div>
         <!-- /.box-body -->
 

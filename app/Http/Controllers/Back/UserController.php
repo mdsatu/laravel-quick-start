@@ -98,6 +98,7 @@ class UserController extends Controller
             $request->validate([
                 'password' => 'required|min:6|confirmed'
             ]);
+            $request['password'] = Hash::make($request->password);
         }
 
         if($user->update($request->all())){

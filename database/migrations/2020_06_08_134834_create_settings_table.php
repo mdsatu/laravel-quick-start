@@ -17,7 +17,7 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('group')->nullable();
             $table->string('name');
-            $table->longText('value');
+            $table->longText('value')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

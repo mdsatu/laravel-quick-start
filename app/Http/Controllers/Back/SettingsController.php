@@ -69,6 +69,26 @@ class SettingsController extends Controller
         $insert['value'] = $request->copyright;
         DB::table('settings')->updateOrInsert($where, $insert);
 
+        // Colors & Codes
+        $where['name'] = 'primary_color';
+        $insert['value'] = $request->primary_color;
+        DB::table('settings')->updateOrInsert($where, $insert);
+        $where['name'] = 'secondary_color';
+        $insert['value'] = $request->secondary_color;
+        DB::table('settings')->updateOrInsert($where, $insert);
+        $where['name'] = 'background_color';
+        $insert['value'] = $request->background_color;
+        DB::table('settings')->updateOrInsert($where, $insert);
+        $where['name'] = 'custom_head_code';
+        $insert['value'] = $request->custom_head_code;
+        DB::table('settings')->updateOrInsert($where, $insert);
+        $where['name'] = 'custom_body_code';
+        $insert['value'] = $request->custom_body_code;
+        DB::table('settings')->updateOrInsert($where, $insert);
+        $where['name'] = 'custom_footer_code';
+        $insert['value'] = $request->custom_footer_code;
+        DB::table('settings')->updateOrInsert($where, $insert);
+
         // Update Logo
         if($request->logo){
             $this->validate($request, [
