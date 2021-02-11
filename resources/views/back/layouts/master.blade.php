@@ -25,6 +25,8 @@
   <link href="{{asset('back/css/app.css')}}" rel="stylesheet">
 
   @yield('head')
+
+  <link href="{{asset('back/css/print.css')}}" media="print" rel="stylesheet">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -33,7 +35,7 @@
 </form>
 
 <div class="wrapper" id="app">
-  <header class="main-header">
+  <header class="main-header noPrint">
 
     <!-- Logo -->
     <a href="{{route('homepage')}}" target="_blank" class="logo">
@@ -284,7 +286,7 @@
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar noPrint">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -361,7 +363,7 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="content-header noPrint">
       <h1>
         @yield('title')
         <!-- <small>Version 2.0</small> -->
@@ -385,7 +387,7 @@
         @endif
 
         <!-- Custom Loader -->
-        <div class="loader" style="display: none">
+        <div class="loader noPrint" style="display: none">
           <i class="fa fa-spinner fa-spin"></i>
         </div>
 
@@ -395,7 +397,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  <footer class="main-footer">
+  <footer class="main-footer noPrint">
     <strong>{{__('info.copyright')}} | Developed by <a href="https://mdsatu.github.io">MD Satu</a></strong>
   </footer>
 </div>

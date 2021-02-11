@@ -1,0 +1,6 @@
+@page  {
+    margin: 20px;
+}
+
+.print{display: block !important;}
+.noPrint{display: none !important;}
