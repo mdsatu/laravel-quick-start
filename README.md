@@ -26,6 +26,4 @@
 * [MD Satu](https://mdsatu.github.io/)
 
 ## Deployed on
-*`Followed By:`*: [OLX](https://www.olx.com.om/en/)
-*`Followed By:`*: [OLX Mobile](https://www.olx.com.om/en/i2/)
 
