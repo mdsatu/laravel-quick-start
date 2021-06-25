@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
 	/*
@@ -6,8 +6,8 @@ return [
     | Robots
     |--------------------------------------------------------------------------
     |
-    | Robots option tells search engines what to follow and what not to follow. 
-    | It's a simple option that gives you the power to decide about what 
+    | Robots option tells search engines what to follow and what not to follow.
+    | It's a simple option that gives you the power to decide about what
     | pages you want to hide from search engine crawlers and what pages you
     | want them to index and look at.
     |
@@ -32,7 +32,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may specify how you want other sites to get referrer information
-    | from your site. 
+    | from your site.
     | options available are: none, unsafe-url, origin and none-when-downgrade
     |
     */
@@ -49,36 +49,36 @@ return [
     */
 	'type' => 'website',
 
-	
+
 	/*
     |--------------------------------------------------------------------------
     | Title
     |--------------------------------------------------------------------------
     |
-    | Here you may provide the title of your website or a specific page to help search 
-    | engines understand it better. 
+    | Here you may provide the title of your website or a specific page to help search
+    | engines understand it better.
     |
     */
-	'title'	=> 'LaravelQS',
+	'title'	=> 'pSale BD',
 
 	/*
     |--------------------------------------------------------------------------
     | Description
     |--------------------------------------------------------------------------
     |
-    | Here you may provide the description of your website or a specific page to  
-    | help search engines understand it better. 
+    | Here you may provide the description of your website or a specific page to
+    | help search engines understand it better.
     |
     */
-	'description' => 'LaravelQS is a quick start backend functionality. I have done some common functionality that we use in every project regularly.',
+	'description' => 'pSale BD',
 
 	/*
     |--------------------------------------------------------------------------
     | Image
     |--------------------------------------------------------------------------
     |
-    | Here you may provide the url to the image you want search 
-    | engines and crawlers to make use of when displaying your website 
+    | Here you may provide the url to the image you want search
+    | engines and crawlers to make use of when displaying your website
     | or a specific page page.
     |
     */
@@ -89,12 +89,12 @@ return [
     | Author
     |--------------------------------------------------------------------------
     |
-    | Here you may provide the author's name you want search 
-    | engines to make use of when displaying your website 
+    | Here you may provide the author's name you want search
+    | engines to make use of when displaying your website
     | or a specific page page.
     |
     */
-	'author' => 'MD Satu',
+	'author' => 'pSale BD',
 
 
 	/*
@@ -102,7 +102,7 @@ return [
     | GEO REGION AND POSITION
     |--------------------------------------------------------------------------
     |
-    | These are for use if you have a physical location that is important 
+    | These are for use if you have a physical location that is important
     | for your business.
     |
     */
@@ -125,7 +125,7 @@ return [
     | TWITTER SITE
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the way you want crawlers to understand your 
+    | Here you may specify the way you want crawlers to understand your
     | twitter share type. Check twitter docs for more options.
     |
     */
@@ -152,7 +152,7 @@ return [
     | Here you may provide keywords relevant to your website and the specific page.
     |
     */
-	'keywords' => 'Quickstart, Laravel, Laravel Quickstart, LaravelQS',
+	'keywords' => 'pSale BD',
 
 
 ];

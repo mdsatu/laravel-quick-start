@@ -1,32 +1,39 @@
 <?php
 
+use App\Http\Controllers\Back\AdminController;
+use App\Http\Controllers\Back\Auth\AuthController;
+use App\Http\Controllers\Back\Auth\ForgotPasswordController;
+use App\Http\Controllers\Back\DashboardController;
+use App\Http\Controllers\Back\ProfileController;
+use App\Http\Controllers\Back\SettingsController;
+use App\Http\Controllers\Back\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Admin Auth
-Route::get('login',                 'Back\Auth\AuthController@login')               ->name('back.login');
-Route::post('login',                'Back\Auth\AuthController@loginSubmit');
+Route::get('login', [AuthController::class, 'login'])->name('back.login');
+Route::post('login', [AuthController::class, 'loginSubmit']);
 
 // Admin Password Reset
-Route::get('/password/email',           'Back\Auth\ForgotPasswordController@showLinkRequestForm')   ->name('back.password.email');
-Route::post('/password/email',          'Back\Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('/password/reset',           'Back\Auth\ForgotPasswordController@showLinkRequestForm')   ->name('back.password.request');
-Route::post('/password/reset',          'Back\Auth\ResetPasswordController@reset');
-Route::get('/password/reset/{token}',   'Back\Auth\ResetPasswordController@showResetForm')          ->name('back.password.reset');
+Route::get('/password/email', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('back.password.email');
+Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail']);
+Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('back.password.request');
+Route::post('/password/reset', [ForgotPasswordController::class, 'reset']);
+Route::get('/password/reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('back.password.reset');
 
 Route::middleware('auth:back')->group(function (){
-    Route::get('/',                     'Back\DashboardController@dashboard')           ->name('back.dashboard');
+    Route::get('/', [DashboardController::class, 'dashboard'])->name('back.dashboard');
 
     // Admin CRUD
-    Route::resource('admins', 'Back\AdminController', ['as' => 'back']);
+    Route::resource('admins', AdminController::class, ['as' => 'back']);
 
     // User CRUD
-    Route::resource('users', 'Back\UserController', ['as' => 'back']);
+    Route::resource('users', UserController::class, ['as' => 'back']);
 
     // Admin Profile
-    Route::get('profile',               'Back\ProfileController@index')                 ->name('back.profile');
-    Route::post('profile',              'Back\ProfileController@profileSubmit');
+    Route::get('profile', [ProfileController::class, 'index'])->name('back.profile');
+    Route::post('profile', [ProfileController::class, 'profileSubmit']);
 
     // Settings
-    Route::get('info',                  'Back\SettingsController@info')                 ->name('back.info');
-    Route::post('info',                 'Back\SettingsController@infoSubmit');
+    Route::get('info', [SettingsController::class, 'info'])->name('back.info');
+    Route::post('info', [SettingsController::class, 'infoSubmit']);
 });

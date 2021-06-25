@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class ProfileController extends Controller
@@ -47,6 +48,9 @@ class ProfileController extends Controller
                 // Resize Image 120*120
                 $image_resize = Image::make($file->getRealPath());
                 $image_resize->fit(120, 120);
+
+                File::makeDirectory(public_path('/uploads/admin/'), $mode = 0775, true, true);
+
                 $image_resize->save(public_path('/uploads/admin/' . $photo));
 
                 // Delete old

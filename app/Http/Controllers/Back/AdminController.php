@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Admin;
-use App\Role;
-use App\AdminRole;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\SuperAdminAccess;
+use App\Models\Admin;
+use App\Models\AdminRole;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Middleware\SuperAdminAccess;
 
 class AdminController extends Controller
 {
@@ -55,7 +55,7 @@ class AdminController extends Controller
         if($query = Admin::create($request->all())){
             // Make Role
             foreach($request->role as $role){
-                $aRole = new AdminRole();
+                $aRole = new AdminRole;
                 $aRole->role_id = $role;
                 $aRole->admin_id = $query->id;
                 $aRole->save();

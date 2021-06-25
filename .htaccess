@@ -1,3 +1,33 @@
-RewriteEngine On
-RewriteCond %{REQUEST_URI} !^/public/
-RewriteRule ^(.*)$ /public/$1 [L,QSA]
+<ifmodule mod_rewrite.c>
+    <ifmodule mod_negotiation.c>
+        Options -MultiViews
+    </ifmodule>
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} -d [OR]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ ^$1 [N]
+
+    RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
+    RewriteRule ^(.*)$ public/$1
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ server.php
+</ifmodule>
+
+
+# Disable Directory listing
+<Files ~ "^.*\.([Ee][Nn][Vv])">
+ order allow,deny
+ deny from all
+ satisfy all
+</Files>
+
+# Prevent direct access to certain files
+<FilesMatch ^((.*)\.lock$|(.*)\.xml$|(.*)\.vue$|(.*)\.wsdl$|(.*)\.config$|artisan$|.env.example$|.gitattributes$|.gitignore)$>
+ order allow,deny
+ deny from all
+ satisfy all
+</FilesMatch>

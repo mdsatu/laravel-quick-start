@@ -1,6 +1,6 @@
 <?php
 
-use App\Setting;
+use App\Models\Setting;
 
 class Info{
     // Site Info

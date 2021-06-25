@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
-use App\Admin;
-use App\Setting;
-use App\AdminRole;
-use Illuminate\Http\Request;
+use App\Models\Admin;
+use App\Models\AdminRole;
+use App\Models\Role;
+use App\Models\Setting;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class TestController extends Controller
@@ -44,7 +44,7 @@ class TestController extends Controller
         // Create Admin
         $checkAdmin = Admin::where('email', 'admin@me.com')->first();
         if(!$checkAdmin){
-            $admin = new Admin();    
+            $admin = new Admin();
             $admin->first_name = 'MD';
             $admin->last_name = 'Satu';
             $admin->title = 'Super Admin';

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Back\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Password;
 
@@ -21,7 +22,7 @@ class ForgotPasswordController extends Controller
     }
 
     public function showLinkRequestForm()
-    {   
+    {
         return view('back.auth.passwords.email');
     }
 }
