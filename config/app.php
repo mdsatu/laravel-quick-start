@@ -176,7 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
-        DWK\Switcher\SwitcherServiceProvider::class,Davmixcool\MetaManager\MetaServiceProvider::class,Intervention\Image\ImageServiceProvider::class
+        DWK\Switcher\SwitcherServiceProvider::class,
+        Davmixcool\MetaManager\MetaServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
 
     ],
 

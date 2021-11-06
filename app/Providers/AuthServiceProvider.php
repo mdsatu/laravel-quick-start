@@ -37,7 +37,7 @@ class AuthServiceProvider extends ServiceProvider
             return in_array('super-admin', $adminRoles);
         });
 
-        // SuperAdmin
+        // Admin
         $gate->define('isAdmin', function($admin){
             $roles = array();
             if (count($admin->Roles) > 0){

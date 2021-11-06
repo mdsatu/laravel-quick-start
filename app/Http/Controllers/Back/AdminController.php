@@ -141,7 +141,7 @@ class AdminController extends Controller
         }
 
         if($admin->delete()){
-            return redirect()->back()->with('success', 'Admin deleted successfully.');
+            return redirect()->route('back.admins.index')->with('success', 'Admin deleted successfully.');
         }
         return redirect()->back()->with('error', 'Something wrong!');
     }
