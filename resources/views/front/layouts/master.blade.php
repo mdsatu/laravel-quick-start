@@ -94,7 +94,7 @@
 
                 <p><b>Login to <a href="{{route('back.login')}}">Admin Panel</a></b></p>
 
-                <p>{{$settings_g['copyright'] ?? env('PROJECT_COPYRIGHT')}} || Developed By <a href="https://mdsatu.github.io" style="text-decoration:none;font-weight:700">MD Satu</a></p>
+                <p>{!! $settings_g['copyright'] ?? env('PROJECT_COPYRIGHT') !!} || Developed By <a href="https://mdsatu.github.io" style="text-decoration:none;font-weight:700">MD Satu</a></p>
             </div>
         </div>
 
