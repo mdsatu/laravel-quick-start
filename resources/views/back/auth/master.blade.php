@@ -44,7 +44,7 @@
 
 <div class="conterner copyright">
     <div class="text-center" style="margin-bottom: 25px;">
-        <strong>{{__('info.copyright')}} | Developed by <a target="_blank" href="https://mdsatu.github.io">MD Satu</a></strong>
+        <strong>{!! __('info.copyright') !!} | Developed by <a target="_blank" href="https://mdsatu.github.io">MD Satu</a></strong>
     </div>
 </div>
 

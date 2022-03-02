@@ -398,7 +398,7 @@
   <!-- /.content-wrapper -->
 
   <footer class="main-footer noPrint">
-    <strong>{{__('info.copyright')}} | Developed by <a href="https://mdsatu.github.io">MD Satu</a></strong>
+    <strong>{!! __('info.copyright') !!} | Developed by <a href="https://mdsatu.github.io">MD Satu</a></strong>
   </footer>
 </div>
 <!-- ./wrapper -->
